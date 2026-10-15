@@ -14,7 +14,7 @@
     <p class="toc"><a href="#members">For members</a> · <a href="#organizers">For event organizers</a> · <a href="#admins">For server admins</a> · <a href="#plans">Free and Paid</a> · <a href="#privacy">Privacy</a> · <a href="#glossary">Words used here</a></p>
 
     <h2 id="members">For members</h2>
-    <h3>Signing up</h3>
+    <h3 id="signing-up">Signing up</h3>
     <ul>
       <li><strong>Join:</strong> press <strong>Join</strong> on the roster in the event’s thread. What clicking <strong>Interested</strong> on the Discord event does depends on the server: it signs you up too, puts you on standby until you press Join, or just follows the event (you’re told if its time changes). Your place in line is the time the bot first saw you sign up; if Interested only put you on standby or following, your place counts from pressing Join.</li>
       <li><strong>Leave:</strong> remove Interested, or press <strong>Leave</strong>. If you come back within the server’s grace period (15 minutes unless changed), you keep your original place.</li>
@@ -40,13 +40,14 @@
       <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
       <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick your roles from the ones the server offers, one menu per group (such as jobs, content you want pings for, and notifications).</td></tr>
       <tr><td><code>/attendance me</code></td><td>anywhere</td><td>Your attendance record (servers on the Paid plan).</td></tr>
+      <tr><td><code>/help [topic]</code></td><td>anywhere</td><td>A short answer with a link to the right part of this guide.</td></tr>
       <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="#privacy">Privacy</a>).</td></tr>
     </table>
     <p>Private replies from the bot disappear after a couple of minutes.</p>
 
     <h2 id="organizers">For event organizers</h2>
     <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button and the <code>/roster</code> command, used inside the event’s thread.</p>
-    <h3>Choosing the roster</h3>
+    <h3 id="presets">Choosing the roster</h3>
     <ul>
       <li><strong>Presets</strong> are rosters the server has saved, such as “Mage Sortie: 2 parties of 6”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Until someone other than you signs up (Discord marks you Interested when you create the event), renaming the event picks the matching preset again.</li>
       <li>After that, renaming the event to match a different preset posts an <strong>Apply / Keep current</strong> prompt for you.</li>
@@ -54,7 +55,7 @@
       <li><code>/roster expand</code> adds a party, copied from the preset’s repeatable party and adjusted in a form; <code>/roster shrink</code> removes the last party.</li>
       <li><code>/roster slots</code> and <code>/roster role</code> set this event’s own size and role slots.</li>
     </ul>
-    <h3>Setting up from the event description</h3>
+    <h3 id="description-setup">Setting up from the event description</h3>
     <p>Write a block like this in the Discord event’s description:</p>
     <pre>Roster: @Aldric, Brynna, Corvin
 Open slots: 2
@@ -74,7 +75,7 @@ Slots: Healer, 2x Tank</pre>
       <tr><td><code>/roster set-role player role</code></td><td>Set the role a player is bringing.</td></tr>
       <tr><td><code>/roster fill</code></td><td>Move standby members into open slots now.</td></tr>
     </table>
-    <h3>Attendance (Paid)</h3>
+    <h3 id="attendance">Attendance (Paid)</h3>
     <ul>
       <li>For events in a voice channel, the bot notes who was in the channel during the event and pre-marks them as attended.</li>
       <li><code>/roster attendance</code> (or Manage → <em>Attendance…</em>) opens a checklist to confirm or correct it, during or after the event.</li>
