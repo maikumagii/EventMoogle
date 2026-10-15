@@ -38,7 +38,7 @@
       <tr><td><code>/standby</code></td><td>event thread</td><td>Switch between a regular signup and standby.</td></tr>
       <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order.</td></tr>
       <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
-      <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick the roles you play from the ones the server offers.</td></tr>
+      <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick your roles from the ones the server offers, one menu per group (such as jobs, content you want pings for, and notifications).</td></tr>
       <tr><td><code>/attendance me</code></td><td>anywhere</td><td>Your attendance record (servers on the Paid plan).</td></tr>
       <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="#privacy">Privacy</a>).</td></tr>
     </table>
@@ -89,7 +89,7 @@ Slots: Healer, 2x Tank</pre>
       <tr><td>Default roster</td><td>Size and role slots for events without a preset, for example <code>WHM, Tank, Open</code>.</td></tr>
       <tr><td>Presets</td><td>Named rosters picked by keywords in event names: one line of roles per party, a repeatable party, and roles to ping. Includes <em>Test an event name</em>.</td></tr>
       <tr><td>Categories</td><td>Roles that stand for several others, such as Healer = WHM, SCH. On Paid, the bot can give and remove category roles to match.</td></tr>
-      <tr><td>Self-assignable roles</td><td>The roles members can pick with <code>/roles</code>.</td></tr>
+      <tr><td>Self-assignable roles</td><td>The roles members can pick with <code>/roles</code>, in up to four named groups (for example <em>Jobs</em> and <em>Content</em>), one menu each. A <em>Notifications</em> menu is added from the roles your ping rules mention.</td></tr>
       <tr><td>Notifications</td><td>Ping rules (event-name keywords → roles pinged when an event is posted) and the default notification (a role, @everyone, or nobody).</td></tr>
       <tr><td>Timings</td><td>Grace period, pre-event roster, reminder cooldown, missing-role warning, standby fill.</td></tr>
       <tr><td>Templates</td><td>The wording of the introduction, reminders and notices.</td></tr>
