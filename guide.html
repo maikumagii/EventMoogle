@@ -19,6 +19,7 @@
       <li><strong>Join:</strong> press <strong>Join</strong> on the roster in the event’s thread. What clicking <strong>Interested</strong> on the Discord event does depends on the server: it signs you up too, puts you on standby until you press Join, or just follows the event (you’re told if its time changes). Your place in line is the time the bot first saw you sign up; if Interested only put you on standby or following, your place counts from pressing Join.</li>
       <li><strong>Leave:</strong> remove Interested, or press <strong>Leave</strong>. If you come back within the server’s grace period (15 minutes unless changed), you keep your original place.</li>
       <li><strong>Your role:</strong> by default you’re matched on the roles you already have. <strong>Change role</strong> lets you pick a specific role you’re bringing, “Any role I have”, or <strong>Standby</strong>.</li>
+      <li><strong>Preferences:</strong> in <code>/whoami</code> you can say which roles you prefer, and which you’d rather not play. The bot uses them when placing you on rosters, but they never cost you your place, and choosing a role for one event always wins.</li>
       <li><strong>Standby:</strong> you wait outside the roster and are moved into an open slot shortly before the event (an hour by default), or earlier if an organizer fills from standby. You get a mention when that happens.</li>
     </ul>
     <h3>The roster</h3>
@@ -39,6 +40,7 @@
       <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order.</td></tr>
       <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
       <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick your roles from the ones the server offers, one menu per group (such as jobs, content you want pings for, and notifications).</td></tr>
+      <tr><td><code>/whoami</code></td><td>anywhere</td><td>Set your server nickname, your roles and pings, and which roles you prefer or would rather not play.</td></tr>
       <tr><td><code>/attendance me</code></td><td>anywhere</td><td>Your attendance record (servers on the Paid plan).</td></tr>
       <tr><td><code>/help [topic]</code></td><td>anywhere</td><td>A short answer with a link to the right part of this guide.</td></tr>
       <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="#privacy">Privacy</a>).</td></tr>
@@ -93,7 +95,7 @@ Slots: Healer, 2x Tank</pre>
       <tr><td>Self-assignable roles</td><td>The roles members can pick with <code>/roles</code>, in up to four named groups (for example <em>Jobs</em> and <em>Content</em>), one menu each. A <em>Notifications</em> menu is added from the roles your ping rules mention.</td></tr>
       <tr><td>Notifications</td><td>Ping rules (event-name keywords → roles pinged when an event is posted) and the default notification (a role, @everyone, or nobody).</td></tr>
       <tr><td>Timings</td><td>Grace period, pre-event roster, reminder cooldown, missing-role warning, standby fill.</td></tr>
-      <tr><td>Templates</td><td>The wording of the introduction, reminders and notices.</td></tr>
+      <tr><td>Templates</td><td>The wording of the introduction, reminders and notices, and the nickname hint shown in <code>/whoami</code> (for example “Use your in-game character name”).</td></tr>
       <tr><td>Status</td><td>A checklist of permissions and anything that isn’t working, with the reason.</td></tr>
       <tr><td>Subscription</td><td>Your plan, and the upgrade button.</td></tr>
     </table>
