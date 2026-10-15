@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Privacy Policy — Event Moogle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav aria-label="Policies"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a></nav>
+  <main>
+    <h1>Privacy Policy</h1>
+    <p class="meta">Effective October 15, 2026</p>
+    <h2>1. Who operates the bot</h2>
+    <p>This policy covers the Event Moogle instance operated by Discord user 642106888493858847. Questions and requests about your information can be sent to <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>. Independently hosted copies have separate operators; this policy does not describe another host’s practices.</p>
+    <h2>2. Information we process</h2>
+    <p>The bot receives information through Discord’s API, event notifications, and slash commands. It can record people who mark Interested on a monitored event even if they never run a command. Authorized users can also add people to the bot’s signup records.</p>
+    <ul>
+      <li><strong>Identifiers:</strong> Discord user, server, event, role, channel, thread, and message IDs.</li>
+      <li><strong>Signup and roster records:</strong> first-observed signup times, withdrawal and rejoin state, ordering, registered role IDs and names, role assignments, and manual inclusion or exclusion.</li>
+      <li><strong>Event and member information:</strong> event names, descriptions, start times, status, creator identity, member names, and server roles used to display events, check permissions, and match players to slots. Some information is fetched as needed; event details can also appear in stored generated messages.</li>
+      <li><strong>Configuration and delivery records:</strong> server and event settings, templates, role groups, reminder requests and cooldowns, generated roster and notification text, mentioned user IDs, and message delivery or cleanup state.</li>
+      <li><strong>Member roles (Server Members intent):</strong> when the operator enables it, Discord sends member and role updates so rosters can match players to slots and the bot can keep category roles in step. These are kept in memory, not stored, apart from the role assignments above.</li>
+      <li><strong>Attendance (servers on the Paid plan):</strong> for events held in a voice channel, which members were present in that channel during the event (sampled every few minutes), and attendance marks (attended or no-show) with each event’s name, start time and final roster.</li>
+      <li><strong>Subscriptions:</strong> Discord’s records of a server’s subscription to the bot (entitlement and product IDs and start and end times). Payments are handled by Discord; the bot never receives payment details.</li>
+      <li><strong>Privacy lists:</strong> the Discord IDs of people who asked for redaction or deletion, so those requests keep being honored.</li>
+      <li><strong>Operational logs:</strong> connection and error information, signup actions, event and server IDs, and, for some actions, affected user IDs, role IDs, and the ID of the person making the change.</li>
+    </ul>
+    <p>The bot reads relevant channel and thread history to recover its own previously sent messages and avoid duplicate posts. It does not maintain a general archive of members’ conversations. The bot does not request your Discord password, email address, payment details, or private direct-message history.</p>
+    <h2>3. How information is used</h2>
+    <p>Information is used to maintain signup order, apply role and capacity rules, manage withdrawal grace periods, display rosters, send reminders and schedule-change notices, record and summarize attendance where a server uses it, decide which features a server’s plan includes, enforce command permissions and cooldowns, recover after restarts, and troubleshoot failures. Attendance history may be used in the future to inform signup priority; this policy will be updated before that happens. The bot does not use this information for advertising, sell it, or use it to train AI models.</p>
+    <h2>4. Who can see information</h2>
+    <p>Signup names, mentions, selected roles, roster eligibility, and changes may appear in event threads and command responses. People who can access those Discord channels may see public messages. Some command responses are private to the invoking user, but underlying signup records are not necessarily private. Administrators and designated bot operators can manage records through authorized commands.</p>
+    <p>The operator and hosting providers involved in running the service may access stored records and logs as needed to operate and support it. Data is sent to Discord to provide the bot’s features. Information may also be disclosed where required by law. Discord processes information under its own <a href="https://discord.com/privacy">Privacy Policy</a>.</p>
+    <h2>5. Storage and retention</h2>
+    <p>The bot stores records in a SQLite database on its host. In Docker deployments, the database normally lives in a persistent volume and survives container replacement and upgrades. Logs are written to the hosting environment; their retention depends on that environment’s configuration.</p>
+    <ul>
+      <li><strong>Ended events:</strong> 90 days after an event ends, its signups, notices, pins, roster state and voice presence samples are deleted automatically. A small record of the event (its IDs and status) remains so it is never posted again.</li>
+      <li><strong>Attendance records</strong> are kept after events end, so servers can see attendance history, until a deletion request or the server’s removal.</li>
+      <li><strong>Servers that remove the bot:</strong> everything stored for that server is deleted 30 days after the removal, unless the bot is added back first.</li>
+      <li><strong>Backups:</strong> the bot keeps copies of its database made before software upgrades; only the most recent three are kept. Other host backups follow the operator’s own practices.</li>
+      <li><strong>Settings</strong> stay until the server removes the bot (see above) or asks the operator to delete them.</li>
+    </ul>
+    <p>Withdrawing from an event is not a deletion request; see the next section. This policy does not promise that Discord’s own copies of messages are erased when the bot deletes a record.</p>
+    <h2>6. Your choices and requests</h2>
+    <p><strong>Display redaction:</strong> run <code>/privacy redact</code> and confirm the private prompt within two minutes to replace your user mentions and displayed ID in the bot’s output with <code>&lt;redacted upon request&gt;</code>, across servers managed by this bot instance. Your signup, roster slot, roles and priority stay intact, and your records remain stored so matching, withdrawals and rejoining still work. This is not deletion: event timing and roles may still make you identifiable to other participants. There is no self-service reversal.</p>
+    <p><strong>Deletion:</strong> run <code>/privacy delete</code> and confirm to delete your signups, roster places, pins, notes, warnings, attendance records and voice presence samples in every server this instance serves, and to redact you in its older posts. The bot then stops tracking you: your Interested clicks are ignored, organizers cannot add you, and event descriptions skip you. Your Discord ID is kept on the redaction and do-not-track lists only so the request keeps being honored. Signing up yourself again (the Join button, <code>/join</code>) or <code>/privacy resume</code> turns tracking back on.</p>
+    <p>The bot edits its own accessible historical messages in batches, with retries after failures. It cannot edit other people’s messages, Discord’s Interested list, screenshots, existing logs or backups, and it recognizes Discord mentions and IDs, not names typed by other people in custom text.</p>
+    <p>To request access, correction or deletion outside Discord, contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>. Include your Discord user ID and, if known, the relevant server or event. Do not send your password or bot tokens. We may ask for reasonable confirmation that the request concerns your account or a server you are authorized to manage. Requests will be handled promptly in accordance with applicable requirements. Depending on your location, you may also have rights to object to or restrict processing or complain to a data-protection authority.</p>
+    <h2>7. Security and policy changes</h2>
+    <p>Access to the bot host, database, and logs should be limited to those who need it to operate the service. No storage or transmission method is completely secure. The SQLite database is not encrypted by the application itself; storage protection depends on the hosting environment.</p>
+    <p>Changes to the bot’s data practices will be reflected here with an updated effective date. Material changes will be communicated through an available bot or support channel where required.</p>
+    <h2>8. This policy website</h2>
+    <p>These static policy pages do not contain analytics scripts, advertising, or application cookies. The website host may process connection information, such as IP addresses and request logs, to serve the pages. If hosted on GitHub Pages, see <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement">GitHub’s Privacy Statement</a>.</p>
+  </main>
+  <footer><a href="terms.html">Read the Terms of Service</a></footer>
+</body>
+</html>

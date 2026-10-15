@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>User Guide — Event Moogle</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+  <main>
+    <h1>Event Moogle User Guide</h1>
+    <p>Event Moogle turns Discord scheduled events into signup lists and rosters. Members sign up by clicking <strong>Interested</strong> on an event or <strong>Join</strong> on its roster; the bot keeps everyone in the order they signed up, fills the roster’s slots, and keeps a thread for each event up to date.</p>
+    <p class="toc"><a href="#members">For members</a> · <a href="#organizers">For event organizers</a> · <a href="#admins">For server admins</a> · <a href="#plans">Free and Paid</a> · <a href="#privacy">Privacy</a> · <a href="#glossary">Words used here</a></p>
+
+    <h2 id="members">For members</h2>
+    <h3>Signing up</h3>
+    <ul>
+      <li><strong>Join:</strong> click <strong>Interested</strong> on the Discord event, or <strong>Join</strong> on the roster in the event’s thread (depending on the server, one or both work). Your place in line is the time the bot first saw you sign up.</li>
+      <li><strong>Leave:</strong> remove Interested, or press <strong>Leave</strong>. If you come back within the server’s grace period (15 minutes unless changed), you keep your original place.</li>
+      <li><strong>Your role:</strong> by default you’re matched on the roles you already have. <strong>Change role</strong> lets you pick a specific role you’re bringing, “Any role I have”, or <strong>Standby</strong>.</li>
+      <li><strong>Standby:</strong> you wait outside the roster and are moved into an open slot shortly before the event (an hour by default), or earlier if an organizer fills from standby. You get a mention when that happens.</li>
+    </ul>
+    <h3>The roster</h3>
+    <ul>
+      <li>The roster appears in the event’s thread with the first signup and updates as people join and leave. Earlier signups are never bumped by later ones.</li>
+      <li>If an event needs particular roles, players are placed into slots that fit them; anyone who can’t fit is listed under <em>Invalid signups</em> with the reason.</li>
+      <li>If someone withdraws from a full roster, the next eligible player is promoted and a short notice says who replaced whom.</li>
+      <li>Shortly before the start (15 minutes by default) the bot posts a fresh <strong>Pre-event roster</strong>.</li>
+      <li>If the start time changes, everyone signed up is mentioned with the old and new times.</li>
+      <li>When the event ends, its thread is archived: it disappears from the channel list but its history stays.</li>
+    </ul>
+    <h3>Commands</h3>
+    <table>
+      <tr><th>Command</th><th>Where</th><th>What it does</th></tr>
+      <tr><td><code>/join [role]</code></td><td>event thread</td><td>Sign up, or choose the role you’re bringing.</td></tr>
+      <tr><td><code>/leave</code></td><td>event thread</td><td>Withdraw.</td></tr>
+      <tr><td><code>/standby</code></td><td>event thread</td><td>Switch between a regular signup and standby.</td></tr>
+      <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order.</td></tr>
+      <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
+      <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick the roles you play from the ones the server offers.</td></tr>
+      <tr><td><code>/attendance me</code></td><td>anywhere</td><td>Your attendance record (servers on the Paid plan).</td></tr>
+      <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="#privacy">Privacy</a>).</td></tr>
+    </table>
+    <p>Private replies from the bot disappear after a couple of minutes.</p>
+
+    <h2 id="organizers">For event organizers</h2>
+    <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button and the <code>/roster</code> command, used inside the event’s thread.</p>
+    <h3>Choosing the roster</h3>
+    <ul>
+      <li><strong>Presets</strong> are rosters the server has saved, such as “Mage Sortie: 2 parties of 6”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Until the roster is first posted, renaming the event picks the matching preset again.</li>
+      <li>After the roster is posted, renaming the event to match a different preset posts an <strong>Apply / Keep current</strong> prompt for you.</li>
+      <li><code>/roster preset</code> (or Manage → <em>Apply a preset</em>) applies any preset by hand.</li>
+      <li><code>/roster expand</code> adds a party, copied from the preset’s repeatable party and adjusted in a form; <code>/roster shrink</code> removes the last party.</li>
+      <li><code>/roster slots</code> and <code>/roster role</code> set this event’s own size and role slots.</li>
+    </ul>
+    <h3>Setting up from the event description</h3>
+    <p>Write a block like this in the Discord event’s description:</p>
+    <pre>Roster: @Aldric, Brynna, Corvin
+Open slots: 2
+Slots: Healer, 2x Tank</pre>
+    <ul>
+      <li>Listed players (mentions, or names that match exactly one member) take the first slots and are signed up for you. In servers that sign up only through Discord’s Interested button, their places are reserved until they click Interested.</li>
+      <li><code>Open slots</code> adds slots anyone can fill; <code>Slots</code> adds slots for roles by name (<code>Open</code> for an open one).</li>
+      <li>Edit the description and the roster follows, until someone who isn’t listed signs up. Names or roles the bot can’t find are listed in the thread.</li>
+    </ul>
+    <h3>Arranging players</h3>
+    <table>
+      <tr><th>Command</th><th>What it does</th></tr>
+      <tr><td><code>/roster move player party</code></td><td>Pin a player into a party (Paid).</td></tr>
+      <tr><td><code>/roster swap first second</code></td><td>Swap two players’ slots (Paid).</td></tr>
+      <tr><td><code>/roster unpin player</code></td><td>Let the bot place a pinned player again.</td></tr>
+      <tr><td><code>/roster add player</code> / <code>remove player</code></td><td>Put someone at the front of the signups, or exclude them.</td></tr>
+      <tr><td><code>/roster set-role player role</code></td><td>Set the role a player is bringing.</td></tr>
+      <tr><td><code>/roster fill</code></td><td>Move standby members into open slots now.</td></tr>
+    </table>
+    <h3>Attendance (Paid)</h3>
+    <ul>
+      <li>For events in a voice channel, the bot notes who was in the channel during the event and pre-marks them as attended.</li>
+      <li><code>/roster attendance</code> (or Manage → <em>Attendance…</em>) opens a checklist to confirm or correct it, during or after the event.</li>
+      <li><code>/attendance member</code> and <code>/attendance recent</code> show history and attendance rates (for members who can manage events).</li>
+    </ul>
+
+    <h2 id="admins">For server admins</h2>
+    <p>Run <code>/settings</code> (needs Manage Server). It opens a private panel with sections:</p>
+    <table>
+      <tr><th>Section</th><th>What you set</th></tr>
+      <tr><td>General</td><td>The announcement channel (turns the bot on and imports current events), how members sign up (Interested, Join, or both), whether Join asks for a role, and <em>Sync now</em>.</td></tr>
+      <tr><td>Default roster</td><td>Size and role slots for events without a preset, for example <code>WHM, Tank, Open</code>.</td></tr>
+      <tr><td>Presets</td><td>Named rosters picked by keywords in event names: one line of roles per party, a repeatable party, and roles to ping. Includes <em>Test an event name</em>.</td></tr>
+      <tr><td>Categories</td><td>Roles that stand for several others, such as Healer = WHM, SCH. On Paid, the bot can give and remove category roles to match.</td></tr>
+      <tr><td>Self-assignable roles</td><td>The roles members can pick with <code>/roles</code>.</td></tr>
+      <tr><td>Notifications</td><td>Ping rules (event-name keywords → roles pinged when an event is posted) and the default notification (a role, @everyone, or nobody).</td></tr>
+      <tr><td>Timings</td><td>Grace period, pre-event roster, reminder cooldown, missing-role warning, standby fill.</td></tr>
+      <tr><td>Templates</td><td>The wording of the introduction, reminders and notices.</td></tr>
+      <tr><td>Status</td><td>A checklist of permissions and anything that isn’t working, with the reason.</td></tr>
+      <tr><td>Subscription</td><td>Your plan, and the upgrade button.</td></tr>
+    </table>
+    <h3>Template placeholders</h3>
+    <p>Placeholders in braces are filled in when a message is sent; a typed <code>\n</code> makes a line break and <code>{{</code> / <code>}}</code> a literal brace.</p>
+    <table>
+      <tr><th>Message</th><th>Placeholders</th></tr>
+      <tr><td>Thread introduction</td><td><code>{event_name}</code> <code>{event_url}</code> <code>{start_time}</code> <code>{player_threshold}</code></td></tr>
+      <tr><td>Reminder</td><td><code>{event_name}</code> <code>{event_url}</code> <code>{time_remaining}</code> <code>{openings}</code> <code>{member_word}</code> <code>{mentions}</code></td></tr>
+      <tr><td>Replacement notice</td><td><code>{departed}</code> <code>{replacement}</code></td></tr>
+      <tr><td>Missing-role warning</td><td><code>{member}</code> <code>{roles_channel}</code></td></tr>
+      <tr><td>Schedule change notice</td><td><code>{previous_time}</code> <code>{new_time}</code></td></tr>
+    </table>
+    <h3>Timings</h3>
+    <table>
+      <tr><th>Timing</th><th>Default</th><th>Range (minutes)</th><th>0 means</th></tr>
+      <tr><td>Rejoin grace period</td><td>15</td><td>0–1440</td><td>Rejoining always starts a new signup</td></tr>
+      <tr><td>Pre-event roster</td><td>15</td><td>0–1440</td><td>No pre-event roster</td></tr>
+      <tr><td>Reminder cooldown</td><td>60</td><td>0–10080</td><td>No cooldown</td></tr>
+      <tr><td>Missing-role warning lifetime</td><td>15</td><td>0–1440</td><td>No warnings</td></tr>
+      <tr><td>Standby fill</td><td>60</td><td>0–1440</td><td>Standby is moved in only by hand</td></tr>
+    </table>
+    <p>Roles can be typed by name. If a name matches no role, the form offers to create it: new roles have no permissions and go to the bottom of the role list. The bot needs Manage Roles for that, and for category roles and <code>/roles</code>, with its own role above the roles it manages.</p>
+
+    <h2 id="plans">Free and Paid</h2>
+    <p><strong>Free</strong> is the complete bot: signups, rosters with parties, buttons, standby, reminders, presets (the two oldest apply automatically by keyword, the rest by hand), description setup, every message template, 10 ping rules, and 15 events maintained at a time.</p>
+    <p><strong>Paid</strong>, a server subscription bought in Discord, adds automation and reporting: every preset applied by keyword, bot-managed category roles, moving and swapping players, attendance with history and stats, 25 ping rules, 50 events at a time, and priority when the bot is busy. If a subscription ends, nothing is deleted; Paid features pause until you subscribe again.</p>
+
+    <h2 id="privacy">Privacy</h2>
+    <ul>
+      <li><code>/privacy redact</code> hides your name and mentions in the bot’s posts, everywhere, while your signups keep working.</li>
+      <li><code>/privacy delete</code> deletes your signups and attendance everywhere and stops the bot tracking you. Signing up again yourself, or <code>/privacy resume</code>, turns tracking back on.</li>
+      <li>Data about ended events is deleted automatically after 90 days; attendance records are kept. Details are in the <a href="privacy.html">Privacy Policy</a>.</li>
+    </ul>
+
+    <h2 id="glossary">Words used here</h2>
+    <ul>
+      <li><strong>Slot:</strong> one place on a roster, either for a role (WHM, Healer) or open to anyone.</li>
+      <li><strong>Party:</strong> a group of slots; a roster can have several, up to 25 slots in total.</li>
+      <li><strong>Category:</strong> a role that covers several others, such as Healer covering WHM and SCH.</li>
+      <li><strong>Preset:</strong> a saved roster the server can reuse, picked by keywords in event names.</li>
+      <li><strong>Ping rule:</strong> keywords that make a new event mention certain roles.</li>
+      <li><strong>Standby:</strong> a signup that waits outside the roster until shortly before the event.</li>
+    </ul>
+    <p>Questions? Contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
+  </main>
+  <footer><a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
+</body>
+</html>
