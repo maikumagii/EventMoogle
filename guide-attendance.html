@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Attendance — Event Moogle User Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+  <main>
+    <h1>Attendance (Paid)</h1>
+    <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <a href="guide-restricted.html">Restricted events</a> · <strong>Attendance</strong> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
+
+    <h2 id="tracking">Taking attendance</h2>
+    <ul>
+      <li>For events in a voice channel, the bot notes who was in the channel during the event and pre-marks them as attended.</li>
+      <li><code>/roster attendance</code> (or Manage → <em>Attendance…</em>) opens a checklist to confirm or correct it, during or after the event. It shows how often each player was seen in voice, and 🕒 how late they joined.</li>
+    </ul>
+
+    <h2 id="history">History and export</h2>
+    <ul>
+      <li><code>/attendance me</code> shows your own record: attended, half and late attendances, no-shows, your rate, and where you stand under the no-show rule.</li>
+      <li><code>/attendance lookup</code> and <code>/attendance recent</code> show history and attendance rates (for members who can manage events).</li>
+      <li><code>/attendance export</code> downloads every attendance mark and recurring-date answer as a spreadsheet (CSV), or one member’s.</li>
+    </ul>
+
+    <h2 id="how-it-counts">How attendance counts</h2>
+    <p>The rules below are worked out when attendance is read, so changing a setting applies to past events too.</p>
+    <ul>
+      <li id="voice-required"><strong>Voice-required events:</strong> put <code>Voice: required</code> in a Discord event’s description. Members marked attended who weren’t seen in its voice channel get half attendance (🎧): it counts as half in the rate and half a miss for the no-show rule. Turn this off in <code>/settings</code> → Attendance rules.</li>
+      <li id="late"><strong>Late arrivals:</strong> members first seen in an event’s voice channel more than 10 minutes after its scheduled start are late (🕒) and count ¾ in the rate and the no-show rule (a quarter of a miss). A rescheduled event counts from its new time; starting early doesn’t make anyone late. <code>/settings</code> → Attendance rules → <em>Late arrivals…</em> changes the minutes (0 turns it off) and whether late counts in full, ¾ or ½.</li>
+      <li id="void"><strong>Voiding an event:</strong> if an event’s attendance shouldn’t count (a test run, or one padded with attendance), <code>/settings</code> → Attendance rules → <em>Void an event…</em> voids it. It stays listed, marked ⊘, but no longer counts toward rates or the no-show rule, including its unanswered recurring-date confirmations; choose it again to restore it. Both are recorded in the audit log.</li>
+    </ul>
+
+    <h2 id="no-show-rule">The no-show rule</h2>
+    <p>Off by default (<code>/settings</code> → Attendance rules). Members who missed more than a set share of their recent signups (no-shows in attendance, or not confirming a <a href="guide-organizers.html#confirm-attendance">recurring date</a>) wait on standby first, behind members who chose standby, and are called in at the standby fill time if places remain. Saying <em>Can't make it</em> in time isn't a miss, and the window moves on as members attend. <code>/attendance me</code> shows where you stand; admins can exempt someone with <code>/attendance exempt</code>.</p>
+    <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
+  </main>
+  <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
+</body>
+</html>

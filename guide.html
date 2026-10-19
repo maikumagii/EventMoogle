@@ -10,136 +10,51 @@
   <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
   <main>
     <h1>Event Moogle User Guide</h1>
-    <p>Event Moogle turns Discord scheduled events into signup lists and rosters. Members sign up by clicking <strong>Interested</strong> on an event or <strong>Join</strong> on its roster; the bot keeps everyone in the order they signed up, fills the roster’s slots, and keeps a thread for each event up to date.</p>
-    <p class="toc"><a href="#members">For members</a> · <a href="#organizers">For event organizers</a> · <a href="#admins">For server admins</a> · <a href="#plans">Free and Paid</a> · <a href="#privacy">Privacy</a> · <a href="#glossary">Words used here</a></p>
+    <p>Event Moogle turns Discord scheduled events into signup lists and rosters. Members sign up by clicking <strong>Interested</strong> on an event or <strong>Join</strong> on its roster; the bot keeps everyone in the order they signed up, fills the roster’s slots, and keeps a thread for each event up to date. This page lists what it does; each part has its own page with the details.</p>
+    <p class="toc"><strong>Overview</strong> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
 
-    <h2 id="members">For members</h2>
-    <h3 id="signing-up">Signing up</h3>
+    <h2 id="members"><a href="guide-members.html">For members</a></h2>
     <ul>
-      <li><strong>Join:</strong> press <strong>Join</strong> on the roster in the event’s thread. What clicking <strong>Interested</strong> on the Discord event does depends on the server: it signs you up too, puts you on standby until you press Join, or just follows the event (you’re told if its time changes). The bot can’t mark you Interested, so after Join it links to the event in case you want Discord’s own reminder. Your place in line is the time the bot first saw you sign up; if Interested only put you on standby or following, your place counts from pressing Join.</li>
-      <li><strong>Leave:</strong> remove Interested, or press <strong>Leave</strong>. If you come back within the server’s grace period (5 minutes unless changed), you keep your original place. After pressing Leave, <strong>Withdraw now</strong> gives your place up straight away instead.</li>
-      <li><strong>Your role:</strong> by default you’re matched on the roles you already have. <strong>Change role</strong> lets you pick a specific role you’re bringing, “Any role I have”, or <strong>Standby</strong>.</li>
-      <li><strong>Preferences:</strong> in <code>/whoami</code> you can say which roles you prefer, and which you’d rather not play. The bot uses them when placing you on rosters, but they never cost you your place, and choosing a role for one event always wins.</li>
-      <li><strong>Standby:</strong> you wait outside the roster and are moved into an open slot shortly before the event (an hour by default), or earlier if an organizer fills from standby. You get a mention when that happens.</li>
-    </ul>
-    <h3>The roster</h3>
-    <ul>
-      <li>The roster appears in the event’s thread with the first signup and updates as people join and leave. Earlier signups are never bumped by later ones.</li>
-      <li>If an event needs particular roles, players are placed into slots that fit them; anyone who can’t fit is listed under <em>Invalid signups</em> with the reason.</li>
-      <li>If someone withdraws from a full roster, the next eligible player is promoted and a short notice says who replaced whom.</li>
-      <li>Shortly before the start (15 minutes by default) the bot posts a fresh <strong>Pre-event roster</strong>, which mentions the players placed on it. Until then the roster shows members by their server names, since edits to it don't notify anyone.</li>
-      <li>If the start time changes, everyone signed up is mentioned with the old and new times.</li>
-      <li>When the event ends, its thread is archived: it disappears from the channel list but its history stays.</li>
-    </ul>
-    <h3>Commands</h3>
-    <table>
-      <tr><th>Command</th><th>Where</th><th>What it does</th></tr>
-      <tr><td><code>/join [role]</code></td><td>event thread</td><td>Sign up, or choose the role you’re bringing.</td></tr>
-      <tr><td><code>/leave</code></td><td>event thread</td><td>Withdraw.</td></tr>
-      <tr><td><code>/standby</code></td><td>event thread</td><td>Switch between a regular signup and standby.</td></tr>
-      <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order.</td></tr>
-      <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
-      <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick your roles from the ones the server offers, one menu per group (such as jobs, content you want pings for, and notifications).</td></tr>
-      <tr><td><code>/whoami</code></td><td>anywhere</td><td>Set your server nickname, your roles and pings, and which roles you prefer or would rather not play.</td></tr>
-      <tr><td><code>/attendance me</code></td><td>anywhere</td><td>Your attendance record (servers on the Paid plan).</td></tr>
-      <tr><td><code>/help [topic]</code></td><td>anywhere</td><td>A short answer with a link to the right part of this guide.</td></tr>
-      <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="#privacy">Privacy</a>).</td></tr>
-    </table>
-    <p>Private replies from the bot disappear after a couple of minutes.</p>
-
-    <h2 id="organizers">For event organizers</h2>
-    <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button (or <code>/roster manage</code>) and the <code>/roster</code> command, used inside the event’s thread.</p>
-    <h3 id="presets">Choosing the roster</h3>
-    <ul>
-      <li><strong>Presets</strong> are rosters the server has saved, such as “Raid: 2 Tanks, 2 Healers, 4 DPS” or “Scrim: 5 players”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Keywords match whole words and their plurals (<em>raid</em> matches “Raids”), and <code>mage + sortie</code> needs both words in any order (“Sortie with Mages”). Presets are in an order the admins set: the first one with a matching keyword wins. Until someone other than you signs up (Discord marks you Interested when you create the event), renaming the event picks the matching preset again.</li>
-      <li>After that, renaming the event to match a different preset posts an <strong>Apply / Keep current</strong> prompt for you.</li>
-      <li><code>/roster preset</code> (or Manage → <em>Apply a preset</em>) applies any preset by hand.</li>
-      <li><code>/roster expand</code> adds a party, copied from the preset’s repeatable party and adjusted in a form; <code>/roster shrink</code> removes the last party.</li>
-      <li><code>/roster slots</code> and <code>/roster role</code> set this event’s own size and role slots.</li>
-    </ul>
-    <h3 id="recurring">Recurring events</h3>
-    <p>Each date of a repeating Discord event gets its own post, thread and roster. When a date ends, its thread is archived and the next date is posted. Members who are <strong>Interested</strong> in the series carry over to every date, keeping their place in line; <em>Not interested</em> on one date leaves them out of that date only. <strong>Join</strong> counts for one date: mark Interested to stay on the series.</p>
-    <p><strong>Confirm Attendance</strong> (on by default; <code>/settings</code> → Recurring events): members Interested in the series keep a reserved place on each date and confirm it. In <em>Sign up</em> mode they press <strong>Join</strong> (and <strong>Leave</strong> means “not this date”: they stay on the series); in <em>Everything</em> mode they press <strong>Confirm</strong> or <strong>Can't make it</strong>. In <em>Standby</em> and <em>Follow only</em> modes, pressing Join for each date already is the confirmation. The roster shows ✅ for confirmed and ⏳ for waiting. One reminder pings those who haven't answered (2 hours before the deadline by default). At the deadline (4 hours before the start by default), anyone who hasn't confirmed moves aside and standbys take their places; confirming later puts them back on standby. Joining, or marking Interested on that date, counts as confirming; Discord's <em>Not interested</em> on that date counts as Can't make it. On Paid, <code>/attendance lookup</code> shows how often each member confirmed, declined or didn't answer.</p>
-    <p><strong>No-show rule</strong> (Paid, off by default; <code>/settings</code> → Attendance rules): members who missed more than a set share of their recent signups (no-shows in attendance, or not confirming a recurring date) wait on standby first, behind members who chose standby, and are called in at the standby fill time if places remain. Saying <em>Can't make it</em> in time isn't a miss. <code>/attendance me</code> shows where you stand; admins can exempt someone with <code>/attendance exempt</code>.</p>
-    <p><strong>Voice-required events:</strong> put <code>Voice: required</code> in a Discord event’s description. When attendance is confirmed, members marked attended who weren’t seen in its voice channel get half attendance (🎧); it counts as half in the rate and half a miss for the no-show rule. Turn this off in <code>/settings</code> → Attendance rules; voice presence is always recorded, so switching it applies to past events too.</p>
-    <h3 id="restricted">Restricted events</h3>
-    <p>Only members with certain roles can sign up: put <code>Restricted: Static, Officers</code> (role or category names) in a Discord event’s description, or set <em>Who can sign up</em> on a preset in <code>/settings</code> → Presets. The description line wins over the preset.</p>
-    <ul>
-      <li>Others who press Join get a private reply naming the roles; their Interested clicks don’t put them on the roster. Members who gain a role appear straight away.</li>
-      <li>Members already signed up when a restriction is added stay, marked 🔒 on the roster; remove them by hand if needed. You can always add anyone yourself.</li>
-      <li><strong>Open enrollment:</strong> the thread has an <em>Open enrollment</em> button. Any member with one of the roles (or the organizer) can press it to let anyone sign up for this date; it then disappears. On a recurring event the next date is restricted again, and members without the role who were only let in for one date leave its roster.</li>
-      <li><strong>Private threads:</strong> restricted events get a private thread by default (<code>/settings</code> → Statics → <em>Restricted events private</em> turns that off); <code>Private: no</code> in the description keeps one event public, and <code>Private: yes</code> makes any event private. Either line counts only before the bot posts the event. Discord can’t make a private thread public, so on a private event <em>Open enrollment</em> asks first, then moves the event to a new public thread (where anyone can see the roster and press Join for that date) and closes the private one (locked, kept to read). The new thread is announced like a public event. The bot adds the restricted roles, you, and everyone who signs up. Members outside the roles sign up with Discord’s Interested button once enrollment is open. The bot needs Create Private Threads in the channel.</li>
-      <li><strong>Pings:</strong> a restricted event pings only its roles, never ping rules or the default notification. A private event without a restriction pings nobody. Once enrollment is open on a public event, reminders ping as usual for that date.</li>
-      <li><strong>Statics:</strong> a fixed group with its own role (see <code>/settings</code> → Statics); <code>Restricted: Raid Static</code> restricts an event to it.</li>
-    </ul>
-    <h3 id="description-setup">Setting up from the event description</h3>
-    <p>Write a block like this in the Discord event’s description:</p>
-    <pre>Roster: @Aldric, Brynna, Corvin
-Open slots: 2
-Slots: Healer, 2x Tank</pre>
-    <ul>
-      <li>Listed players (mentions, or names that match exactly one member) take the first slots and are signed up for you. In servers that sign up only through Discord’s Interested button, their places are reserved until they click Interested.</li>
-      <li><code>Open slots</code> adds slots anyone can fill; <code>Slots</code> adds slots for roles by name (<code>Open</code> for an open one).</li>
-      <li>Edit the description and the roster follows, until someone who isn’t listed (other than you, the creator) signs up. Names or roles the bot can’t find are listed in the thread.</li>
-    </ul>
-    <h3>Arranging players</h3>
-    <p>Press <strong>Manage</strong> on the roster (or run <code>/roster manage</code> in the event’s thread). The private panel does it all:</p>
-    <ul>
-      <li><strong>Choose a player</strong> from the list, then <em>Move…</em> (pin them into a party; Paid), <em>Swap…</em> (with another player; Paid: <em>Swap parties</em> moves each to the other’s party, into a slot they fit; <em>Swap places</em> gives each the other’s exact slot and its role, and keeps them there), <em>Unpin</em>, <em>Remove</em> (exclude them, even if Interested) or <em>Set role…</em> (the role they’re bringing).</li>
-      <li><strong>Add a player</strong> puts someone at the front of the signups.</li>
-      <li><em>Slots…</em> sets this event’s size and role slots; apply a preset; add or remove a party; <em>Fill from standby now</em>; <em>Attendance…</em> (Paid).</li>
-    </ul>
-    <p><code>/roster</code> has <code>manage</code>, <code>attendance</code> and <code>export</code> (a CSV of the roster; Paid). With <em>Expanded commands</em> on (<code>/settings</code> → General), it also has typed versions of every panel action: <code>move</code>, <code>swap</code>, <code>unpin</code>, <code>add</code>, <code>remove</code>, <code>set-role</code>, <code>fill</code>, <code>slots</code>, <code>role</code>, <code>preset</code>, <code>expand</code> and <code>shrink</code>. The panel lists the first 25 signups; for bigger events, use the typed commands.</p>
-    <h3 id="attendance">Attendance (Paid)</h3>
-    <ul>
-      <li>For events in a voice channel, the bot notes who was in the channel during the event and pre-marks them as attended.</li>
-      <li><code>/roster attendance</code> (or Manage → <em>Attendance…</em>) opens a checklist to confirm or correct it, during or after the event.</li>
-      <li><code>/attendance lookup</code> and <code>/attendance recent</code> show history and attendance rates (for members who can manage events).</li>
-      <li><code>/attendance export</code> downloads every attendance mark and recurring-date answer as a spreadsheet (CSV), or one member’s.</li>
+      <li><strong>Sign up</strong> with Join on the roster, or Interested on the event; <strong>leave</strong> with Leave, keeping your place if you come back within a few minutes.</li>
+      <li><strong>Choose your role</strong>, or stand by for a place that opens shortly before the event.</li>
+      <li><strong>Your profile</strong> with <code>/whoami</code>: nickname, roles, pings, roles you prefer or would rather not play, and roles you never play in some events.</li>
+      <li><strong>The roster</strong> fills slots in signup order, promotes the next player when someone leaves, and posts a pre-event roster that mentions everyone on it.</li>
     </ul>
 
-    <h2 id="admins">For server admins</h2>
-    <p>When the bot is added, it posts a short welcome in the server’s system channel. Commands appear as they become useful: the event commands once there’s an announcement channel, <code>/roles</code> and <code>/whoami</code> once there’s something to pick. New to the bot? Run <code>/setup</code> (needs Manage Server): it walks through the basics step by step and disappears once you finish. <code>/about-new-features</code> (needs Manage Server, first in the command list) shows what’s new, page by page: the updates your admins haven’t read yet, otherwise the latest one. <code>/settings</code> has everything for later, including <em>Run setup again</em>.</p>
-    <p>Run <code>/settings</code> (needs Manage Server). It opens a private panel with sections; switch between them with the <strong>Section</strong> menu at the top:</p>
-    <table>
-      <tr><th>Section</th><th>What you set</th></tr>
-      <tr><td>General</td><td>The announcement channel (turns the bot on; current events are posted too, or, when taking over from another bot, only events created from now on), what clicking Interested does (sign up, standby, follow only, or everything with Join only picking a role), whether Join asks for a role, and <em>Sync now</em>. <em>Expanded commands</em> adds <code>/admin</code>, with typed versions of some <code>/settings</code> actions (statics, blocks, the admin channel, the entry button, role review) for those who can use <code>/settings</code>; off by default, so the command list stays short.</td></tr>
-      <tr><td>Default roster</td><td>Size and role slots for events without a preset, for example <code>Tank, Healer, DPS, Open</code>.</td></tr>
-      <tr><td>Presets</td><td>Named rosters picked by keywords in event names: one line of roles per party, a repeatable party, and roles to ping. <em>Move up</em>, <em>Move down</em> and <em>Set number…</em> (to put a preset straight at a place in the list) set the order (the first matching preset wins; on Free, the first two roster presets apply automatically). <em>Test an event name</em> shows which preset and keyword a name picks.</td></tr>
-      <tr><td>Categories</td><td>Names that stand for several roles, such as Healer = Cleric, Druid. A category doesn’t need a Discord role: type a new name and choose <em>Create role</em> (it can be @mentioned), <em>Name only</em>, or <em>Cancel</em> for a typo. A name-only category works by name alone in slots, ping rules and <em>Who can sign up</em>, and anything that would ping it pings its member roles. A category with a role of its own: the role is <strong>automatic on Paid</strong> (<em>Let the bot manage role</em>: the bot gives and removes it to match members’ roles) and <strong>manual on Free</strong> (you give it, or members pick it). Either way its member roles fill its slots, and reminders reach them.</td></tr>
-      <tr><td>Self-assignable roles</td><td>The roles members can pick with <code>/roles</code>, in up to four named groups (for example <em>Classes</em> and <em>Events</em>), one menu each. A <em>Notifications</em> menu is added from the roles your ping rules mention (<em>Offer ping roles</em> turns it off); a ping role that's also in a group is listed in both unless <em>Repeat group roles in Notifications</em> is off. <em>Members can pick roles: Off</em> leaves roles to staff: <code>/roles</code> is off and <code>/whoami</code> only sets nicknames and preferences. <em>Post role buttons</em> keeps a post per group in the roles channel (chosen under General), with a button per role: members press it to add the role and again to remove it, and <em>Show my …</em> privately lists which of that post’s roles they have. <em>Edit post texts…</em> sets the line under each post’s heading. <em>Button looks</em> gives a group’s buttons a colour (grey, blurple, green or red: the four Discord allows) and each role an emoji (<code>Tank: 🛡️</code>, or a server emoji as <code>:name:</code>), with a colour of its own if wanted (<code>Healer: 💚 green</code>), and a name for its button in quotes (<code>WAR: ⚔️ red "Warrior"</code> shows ⚔️ Warrior on a red button). Emoji show in the <code>/roles</code> and <code>/whoami</code> menus too; a role with an emoji icon uses it until you set one. <em>Pick emoji with reactions</em> lets you choose them with Discord’s own emoji picker instead: the bot opens a private thread for you in the admin channel (or the announcement channel), asks for one role at a time, and deletes the thread when you’re done. The posts follow the groups and switches. The bot can only give roles below its own: a role above it stays in its group, marked ⚠️ with how to fix it, and is offered once you drag the bot’s role above it in Server Settings → Roles.</td></tr>
-      <tr><td>Notifications</td><td>Ping rules (event-name keywords → roles pinged when an event is posted) and the default notification (a role, @everyone, or nobody).</td></tr>
-      <tr><td>Timings</td><td>Grace period, pre-event roster, reminder cooldown, missing-role warning, standby fill. The pre-event roster pings the players placed on it (not standbys); <em>Pre-event roster pings players</em> turns that off.</td></tr>
-      <tr><td>Templates</td><td>The wording of the introduction, reminders and notices, and the nickname hint shown in <code>/whoami</code> (for example “Use your in-game character name”).</td></tr>
-      <tr><td>Entry button</td><td>A post with one button, in a channel you choose (your rules or welcome channel), that gives new members a role such as <em>Member</em> to let them into the server: a light alternative to a verification bot. It only adds the role (staff remove it) and is kept apart from the self-assignable roles. Choose the channel and role, edit the text and button label, and optionally apply the new-member wait from Safety. Blocked members can’t use it, and each entry is in the audit log. (Discord’s own Onboarding, on Community servers, can do this too.)</td></tr>
-      <tr><td>Settings access</td><td>Who can use <code>/settings</code> and <code>/setup</code>: members with Manage Server (the default), the server owner only, or the owner and roles you choose. Only the owner can change this. Organizers keep their event tools whatever it says.</td></tr>
-      <tr><td>Statics</td><td>Fixed groups, such as a raid static, each with a role the bot creates (no permissions). <em>Create static…</em> names it; add and remove members; <em>Set leader…</em> lets a member manage its members with <code>/static</code>. Use <code>Restricted: &lt;static name&gt;</code> on its events. <em>Dissolve…</em> takes the role from everyone, then keeps or deletes it. <em>Static button…</em> posts a button in a channel you choose so any member can make statics of their own: <em>Create a static</em> asks for a name and what it’s for (one of the server’s ping roles, or none), and each member can have one static per ping role, plus one without. They lead it, and <em>My statics</em> lets them add and remove members, rename it, change what it’s for, or dissolve it, for their own statics only.</td></tr>
-      <tr><td>Safety</td><td><strong>Elevated roles:</strong> a self-assignable role (or ping role) that grants permissions @everyone doesn’t have is offered to members only after you confirm it: <em>Review elevated roles</em> shows each one with the permissions it would give, to <em>Confirm</em> or <em>Skip</em>. If its permissions change later, it stops being offered until you review it again. Roles with Administrator are never offered. <strong>Blocking:</strong> block members from giving themselves roles, or from signing up for events (organizers can still add them; anyone can always leave), or choose a blocking role. <em>New-member wait</em> makes members who just joined wait before picking roles. Members who change roles, or press Join/Leave, too fast are paused for 10 minutes.</td></tr>
-      <tr><td>Admin channel</td><td>Where security alerts are posted, on every plan (the bot checks it can post there; <em>Send test message</em> confirms it): spam pauses, blocked members trying anyway, elevated roles confirmed or changed, and privacy requests that hide someone’s admin actions. On Paid, you can also copy chosen audit log groups there. Keep it private to admins.</td></tr>
-      <tr><td>Audit log (Paid)</td><td>Who did what, and when: settings changes, roster edits, attendance, every signup, members joining and leaving, and what the bot did with its permissions (roles, nicknames, threads), grouped by the permission each needs. Filter by group, member and period, or <em>Download CSV</em>. Entries are kept for the retention period. If someone asks the bot to delete or redact their data, their actions as an organizer or admin stay, shown as <code>&lt;redacted upon request #0042&gt;</code>; for 72 hours a line in the log says who made the request.</td></tr>
-      <tr><td>Status</td><td>A checklist of permissions and anything that isn’t working, with the reason.</td></tr>
-      <tr><td>Subscription</td><td>Your plan, and the upgrade button.</td></tr>
-    </table>
-    <h3>Template placeholders</h3>
-    <p>Placeholders in braces are filled in when a message is sent; a typed <code>\n</code> makes a line break and <code>{{</code> / <code>}}</code> a literal brace.</p>
-    <table>
-      <tr><th>Message</th><th>Placeholders</th></tr>
-      <tr><td>Thread introduction</td><td><code>{event_name}</code> <code>{event_url}</code> <code>{start_time}</code> <code>{player_threshold}</code></td></tr>
-      <tr><td>Reminder</td><td><code>{event_name}</code> <code>{event_url}</code> <code>{time_remaining}</code> <code>{openings}</code> <code>{member_word}</code> <code>{mentions}</code></td></tr>
-      <tr><td>Replacement notice</td><td><code>{departed}</code> <code>{replacement}</code></td></tr>
-      <tr><td>Missing-role warning</td><td><code>{member}</code> <code>{whoami}</code> <code>{roles_channel}</code></td></tr>
-      <tr><td>Schedule change notice</td><td><code>{previous_time}</code> <code>{new_time}</code></td></tr>
-    </table>
-    <h3>Timings</h3>
-    <table>
-      <tr><th>Timing</th><th>Default</th><th>Range (minutes)</th><th>0 means</th></tr>
-      <tr><td>Rejoin grace period</td><td>5</td><td>0–1440</td><td>Rejoining always starts a new signup</td></tr>
-      <tr><td>Pre-event roster</td><td>15</td><td>0–1440</td><td>No pre-event roster</td></tr>
-      <tr><td>Reminder cooldown</td><td>60</td><td>0–10080</td><td>No cooldown</td></tr>
-      <tr><td>Missing-role warning lifetime</td><td>15</td><td>0–1440</td><td>No warnings</td></tr>
-      <tr><td>Standby fill</td><td>60</td><td>0–1440</td><td>Standby is moved in only by hand</td></tr>
-    </table>
-    <p>Roles can be typed by name. If a name matches no role, the form offers to create it: new roles have no permissions and go to the bottom of the role list. <em>Unused roles…</em> (under Self-assignable roles) lists roles the bot created that nothing uses any more, split into those nobody has and those people have, with a delete button for each (the second asks twice). If several roles share a name, it offers to remove the extra copies (the oldest is kept, and only copies with no members and no permissions are removed). A role that already exists is never created again. The bot needs Manage Roles for that, and for category roles and <code>/roles</code>, with its own role above the roles it manages.</p>
+    <h2 id="organizers"><a href="guide-organizers.html">For event organizers</a></h2>
+    <ul>
+      <li><strong>Presets</strong> give each event its roster from keywords in its name; parties, role slots and open slots.</li>
+      <li><strong>Manage</strong> on the roster: move, swap, pin, add or remove players, set slots, fill from standby, take attendance.</li>
+      <li><strong>Description setup:</strong> list players and slots in the Discord event’s description.</li>
+      <li><strong>Recurring events:</strong> a fresh roster per date, with <strong>Confirm Attendance</strong> so places go to people who are coming.</li>
+    </ul>
+
+    <h2 id="restricted"><a href="guide-restricted.html">Restricted events</a></h2>
+    <ul>
+      <li><strong>Only certain roles</strong> can sign up, from a <code>Restricted:</code> line or a preset; private threads by default.</li>
+      <li><strong>Open enrollment</strong> lets anyone in for one date; <strong>statics</strong> are fixed groups with their own role, made by admins or by members with the static button.</li>
+    </ul>
+
+    <h2 id="attendance"><a href="guide-attendance.html">Attendance</a> (Paid)</h2>
+    <ul>
+      <li><strong>Voice presence</strong> pre-fills an attendance check organizers confirm; history, rates and CSV export.</li>
+      <li><strong>Fair counting:</strong> half attendance on voice-required events, late arrivals, voiding an event, and an optional no-show rule that puts members who often miss on standby first.</li>
+    </ul>
+
+    <h2 id="roles"><a href="guide-roles.html">Roles</a></h2>
+    <ul>
+      <li><strong>Categories</strong> such as Healer = Cleric, Druid, with or without a role of their own.</li>
+      <li><strong>Self-assignable roles</strong> in <code>/roles</code> and <code>/whoami</code>, and button posts in your roles channel with emoji, colours and names.</li>
+      <li><strong>An entry button</strong> that lets new members in, and clean-up of roles nothing uses any more.</li>
+    </ul>
+
+    <h2 id="admins"><a href="guide-admins.html">For server admins</a></h2>
+    <ul>
+      <li><code>/setup</code> walks through the basics; <code>/settings</code> has everything, section by section.</li>
+      <li><strong>Notifications</strong> (ping rules), <strong>timings</strong> and message <strong>templates</strong>.</li>
+      <li><strong>Safety:</strong> elevated roles need your confirmation, member blocks, spam pauses, an admin channel for alerts, and who can open <code>/settings</code>.</li>
+      <li><strong>Audit log</strong> (Paid): who did what, and when.</li>
+    </ul>
 
     <h2 id="plans">Free and Paid</h2>
     <p><strong>Free</strong> is the complete bot: signups, rosters with parties, buttons, standby, reminders, presets (the first two in your order apply automatically by keyword, the rest by hand), description setup, restricted events, every message template, 10 ping rules, and 15 events maintained at a time.</p>

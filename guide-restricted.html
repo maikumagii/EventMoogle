@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Restricted events — Event Moogle User Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+  <main>
+    <h1>Restricted events and statics</h1>
+    <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <strong>Restricted events</strong> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
+
+    <h2 id="restricted">Restricting who can sign up</h2>
+    <p>Only members with certain roles can sign up: put <code>Restricted: Static, Officers</code> (role or category names) in a Discord event’s description, or set <em>Who can sign up</em> on a preset in <code>/settings</code> → Presets. The description line wins over the preset.</p>
+    <ul>
+      <li>Others who press Join get a private reply naming the roles; their Interested clicks don’t put them on the roster. Members who gain a role appear straight away.</li>
+      <li>Members already signed up when a restriction is added stay, marked 🔒 on the roster; remove them by hand if needed. Organizers can always add anyone.</li>
+      <li><strong>Pings:</strong> a restricted event pings only its roles, never ping rules or the default notification. A private event without a restriction pings nobody. Once enrollment is open on a public event, reminders ping as usual for that date.</li>
+    </ul>
+
+    <h2 id="private">Private threads</h2>
+    <ul>
+      <li>Restricted events get a private thread by default (<code>/settings</code> → Statics → <em>Restricted events private</em> turns that off). <code>Private: no</code> in the description keeps one event public, and <code>Private: yes</code> makes any event private. Either line counts only before the bot posts the event, since a thread can’t change type later.</li>
+      <li>The bot adds the restricted roles, the event’s creator, and everyone who signs up. It needs Create Private Threads in the channel; without it, the event shows an error rather than a public thread.</li>
+    </ul>
+
+    <h2 id="open-enrollment">Open enrollment</h2>
+    <ul>
+      <li>The event’s thread has an <em>Open enrollment</em> button. Any member with one of the roles (or the organizer) can press it to let anyone sign up for this date; it then disappears.</li>
+      <li>On a private event, Discord can’t make the thread public, so the button asks first, then moves the event to a <strong>new public thread</strong> (where anyone can see the roster and press Join for that date) and closes the private one (locked, kept to read). The new thread is announced like a public event.</li>
+      <li>On a recurring event the next date is restricted (and private) again, and members without the role who were only let in for one date leave its roster.</li>
+    </ul>
+
+    <h2 id="statics">Statics</h2>
+    <p>A static is a fixed group, such as a raid static, with its own role (made by the bot, with no permissions). Membership is holding the role, so <code>Restricted: Raid Static</code> restricts an event to it.</p>
+    <ul>
+      <li><strong>Admins</strong> manage statics in <code>/settings</code> → Statics: <em>Create static…</em> names it; add and remove members; <em>Set leader…</em>; <em>Dissolve…</em> takes the role from everyone, then keeps or deletes it.</li>
+      <li><strong>Leaders</strong> add and remove members with <code>/static</code>.</li>
+      <li><strong>The static button:</strong> <em>Static button…</em> posts a button in a channel you choose so any member can make statics of their own. <em>Create a static</em> asks for a name and what it’s for (one of the server’s ping roles, or none); each member can have one static per ping role, plus one without. They lead it, and <em>My statics</em> lets them add and remove members, rename it, change what it’s for, or dissolve it, for their own statics only.</li>
+    </ul>
+    <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
+  </main>
+  <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
+</body>
+</html>

@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Organizers — Event Moogle User Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+  <main>
+    <h1>For event organizers</h1>
+    <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <strong>Organizers</strong> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
+    <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button (or <code>/roster manage</code>) and the <code>/roster</code> command, used inside the event’s thread. Restricting who can sign up has <a href="guide-restricted.html">its own page</a>, as does <a href="guide-attendance.html">attendance</a>.</p>
+
+    <h2 id="presets">Choosing the roster</h2>
+    <ul>
+      <li><strong>Presets</strong> are rosters the server has saved, such as “Raid: 2 Tanks, 2 Healers, 4 DPS” or “Scrim: 5 players”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Keywords match whole words and their plurals (<em>raid</em> matches “Raids”), and <code>mage + sortie</code> needs both words in any order (“Sortie with Mages”). Presets are in an order the admins set: the first one with a matching keyword wins. Until someone other than you signs up (Discord marks you Interested when you create the event), renaming the event picks the matching preset again.</li>
+      <li>After that, renaming the event to match a different preset posts an <strong>Apply / Keep current</strong> prompt for you.</li>
+      <li><code>/roster preset</code> (or Manage → <em>Apply a preset</em>) applies any preset by hand.</li>
+      <li><code>/roster expand</code> adds a party, copied from the preset’s repeatable party and adjusted in a form; <code>/roster shrink</code> removes the last party.</li>
+      <li><code>/roster slots</code> and <code>/roster role</code> set this event’s own size and role slots.</li>
+    </ul>
+
+    <h2 id="arranging">Arranging players</h2>
+    <p>Press <strong>Manage</strong> on the roster (or run <code>/roster manage</code> in the event’s thread). The private panel does it all:</p>
+    <ul>
+      <li><strong>Choose a player</strong> from the list, then <em>Move…</em> (pin them into a party; Paid), <em>Swap…</em> (with another player; Paid: <em>Swap parties</em> moves each to the other’s party, into a slot they fit; <em>Swap places</em> gives each the other’s exact slot and its role, and keeps them there), <em>Unpin</em>, <em>Remove</em> (exclude them, even if Interested) or <em>Set role…</em> (the role they’re bringing). Your placements win over a member’s role fit.</li>
+      <li><strong>Add a player</strong> puts someone at the front of the signups.</li>
+      <li><em>Slots…</em> sets this event’s size and role slots; apply a preset; add or remove a party; <em>Fill from standby now</em>; <em>Attendance…</em> (Paid).</li>
+    </ul>
+    <p><code>/roster</code> has <code>manage</code>, <code>attendance</code> and <code>export</code> (a CSV of the roster; Paid). With <em>Expanded commands</em> on (<code>/settings</code> → General), it also has typed versions of every panel action: <code>move</code>, <code>swap</code>, <code>unpin</code>, <code>add</code>, <code>remove</code>, <code>set-role</code>, <code>fill</code>, <code>slots</code>, <code>role</code>, <code>preset</code>, <code>expand</code> and <code>shrink</code>. The panel lists the first 25 signups; for bigger events, use the typed commands.</p>
+
+    <h2 id="description-setup">Setting up from the event description</h2>
+    <p>Write a block like this in the Discord event’s description:</p>
+    <pre>Roster: @Aldric, Brynna, Corvin
+Open slots: 2
+Slots: Healer, 2x Tank</pre>
+    <ul>
+      <li>Listed players (mentions, or names that match exactly one member) take the first slots and are signed up for you. In servers that sign up only through Discord’s Interested button, their places are reserved until they click Interested (not for anyone who said they can’t make it).</li>
+      <li><code>Open slots</code> adds slots anyone can fill; <code>Slots</code> adds slots for roles or categories by name (<code>Open</code> for an open one).</li>
+      <li>Edit the description and the roster follows, until someone who isn’t listed (other than you, the creator) signs up. Names or roles the bot can’t find are listed in the thread.</li>
+      <li>Other lines in the description: <code>Restricted:</code> and <code>Private:</code> (see <a href="guide-restricted.html">Restricted events</a>), <code>Voice: required</code> (see <a href="guide-attendance.html#voice-required">Attendance</a>).</li>
+    </ul>
+
+    <h2 id="recurring">Recurring events</h2>
+    <p>Each date of a repeating Discord event gets its own post, thread and roster. When a date ends, its thread is archived and the next date is posted. Members who are <strong>Interested</strong> in the series carry over to every date, keeping their place in line; <em>Not interested</em> on one date leaves them out of that date only. <strong>Join</strong> counts for one date: mark Interested to stay on the series.</p>
+    <h3 id="confirm-attendance">Confirm Attendance</h3>
+    <p>On by default (<code>/settings</code> → Recurring events). Members Interested in the series keep a reserved place on each date and confirm it:</p>
+    <ul>
+      <li>In <em>Sign up</em> mode they press <strong>Join</strong> (and <strong>Leave</strong> means “not this date”: they stay on the series); in <em>Everything</em> mode they press <strong>Confirm</strong> or <strong>Can't make it</strong>. In <em>Standby</em> and <em>Follow only</em> modes, pressing Join for each date already is the confirmation.</li>
+      <li>The roster shows ✅ for confirmed and ⏳ for waiting. One reminder pings those who haven't answered (2 hours before the deadline by default).</li>
+      <li>At the deadline (4 hours before the start by default), anyone who hasn't confirmed moves aside and standbys take their places; confirming later puts them back on standby.</li>
+      <li>Joining, or marking Interested on that date, counts as confirming; Discord's <em>Not interested</em> on that date counts as Can't make it. If the date is rescheduled or started early, the answers move with it.</li>
+      <li>On Paid, <code>/attendance lookup</code> shows how often each member confirmed, declined or didn't answer.</li>
+    </ul>
+    <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
+  </main>
+  <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
+</body>
+</html>

@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Members — Event Moogle User Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+  <main>
+    <h1>For members</h1>
+    <p class="toc"><a href="guide.html">Overview</a> · <strong>Members</strong> · <a href="guide-organizers.html">Organizers</a> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
+
+    <h2 id="signing-up">Signing up</h2>
+    <ul>
+      <li><strong>Join:</strong> press <strong>Join</strong> on the roster in the event’s thread. What clicking <strong>Interested</strong> on the Discord event does depends on the server: it signs you up too, puts you on standby until you press Join, or just follows the event (you’re told if its time changes). The bot can’t mark you Interested, so after Join it links to the event in case you want Discord’s own reminder. Your place in line is the time the bot first saw you sign up; if Interested only put you on standby or following, your place counts from pressing Join.</li>
+      <li><strong>Leave:</strong> remove Interested, or press <strong>Leave</strong>. If you come back within the server’s grace period (5 minutes unless changed), you keep your original place. While your place is held, <strong>Leave</strong> offers <strong>Withdraw now</strong> to give it up straight away, also after removing Interested.</li>
+      <li><strong>Your role:</strong> by default you’re matched on the roles you already have. <strong>Change role</strong> lets you pick a specific role you’re bringing, “Any role I have”, or <strong>Standby</strong>.</li>
+      <li><strong>Preferences:</strong> in <code>/whoami</code> you can say which roles you prefer, and which you’d rather not play. The bot uses them when placing you on rosters, but they never cost you your place, and choosing a role for one event always wins.</li>
+      <li><strong>Role fit:</strong> the last step of <code>/whoami</code> is for a hard no: pick a preset (such as Odyssey) and the roles you’re never to be placed as in its events. You keep the role and its pings; choosing a role for one event, or an organizer placing you, still wins.</li>
+      <li><strong>Standby:</strong> you wait outside the roster and are moved into an open slot shortly before the event (an hour by default), or earlier if an organizer fills from standby. You get a mention when that happens.</li>
+    </ul>
+
+    <h2 id="roster">The roster</h2>
+    <ul>
+      <li>The roster appears in the event’s thread with the first signup and updates as people join and leave. Earlier signups are never bumped by later ones. Open slots are listed with the role each needs.</li>
+      <li>If an event needs particular roles, players are placed into slots that fit them; anyone who can’t fit is listed under <em>Invalid signups</em> with the reason.</li>
+      <li>If someone withdraws from a full roster, the next eligible player is promoted and a short notice says who replaced whom.</li>
+      <li>Players are shown as a mention with their server name after it. Edits to the roster never notify anyone; shortly before the start (15 minutes by default) the bot posts a fresh <strong>Pre-event roster</strong>, which does notify the players placed on it.</li>
+      <li>If the start time changes, everyone signed up is mentioned with the old and new times.</li>
+      <li>When the event ends, its thread is archived: it disappears from the channel list but its history stays.</li>
+    </ul>
+
+    <h2 id="commands">Commands</h2>
+    <table>
+      <tr><th>Command</th><th>Where</th><th>What it does</th></tr>
+      <tr><td><code>/join [role]</code></td><td>event thread</td><td>Sign up, or choose the role you’re bringing.</td></tr>
+      <tr><td><code>/leave</code></td><td>event thread</td><td>Withdraw.</td></tr>
+      <tr><td><code>/standby</code></td><td>event thread</td><td>Switch between a regular signup and standby.</td></tr>
+      <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order.</td></tr>
+      <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
+      <tr><td><code>/roles</code></td><td>anywhere</td><td>Pick your roles from the ones the server offers, one menu per group (such as jobs, content you want pings for, and notifications).</td></tr>
+      <tr><td><code>/whoami</code></td><td>anywhere</td><td>Set your server nickname, your roles and pings, which roles you prefer or would rather not play, and per preset the roles you never play.</td></tr>
+      <tr><td><code>/attendance me</code></td><td>anywhere</td><td>Your attendance record (servers on the Paid plan; see <a href="guide-attendance.html">Attendance</a>).</td></tr>
+      <tr><td><code>/static</code></td><td>anywhere</td><td>Manage the members of a static you lead (see <a href="guide-restricted.html#statics">Statics</a>).</td></tr>
+      <tr><td><code>/help [topic]</code></td><td>anywhere</td><td>A short answer with a link to the right page of this guide.</td></tr>
+      <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="guide.html#privacy">Privacy</a>).</td></tr>
+    </table>
+    <p>Private replies from the bot disappear after a couple of minutes.</p>
+    <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
+  </main>
+  <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
+</body>
+</html>
