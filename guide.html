@@ -11,7 +11,7 @@
   <main>
     <h1>Event Moogle User Guide</h1>
     <p>Event Moogle turns Discord scheduled events into signup lists and rosters. Members sign up by clicking <strong>Interested</strong> on an event or <strong>Join</strong> on its roster; the bot keeps everyone in the order they signed up, fills the roster’s slots, and keeps a thread for each event up to date. This page lists what it does; each part has its own page with the details.</p>
-    <p class="toc"><strong>Overview</strong> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
+    <p class="toc"><strong>Overview</strong> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-alliances.html">Alliances</a> · <a href="guide-admins.html">Server admins</a></p>
 
     <h2 id="members"><a href="guide-members.html">For members</a></h2>
     <ul>
@@ -48,6 +48,15 @@
       <li><strong>An entry button</strong> that lets new members in, and clean-up of roles nothing uses any more.</li>
     </ul>
 
+    <h2 id="alliances"><a href="guide-alliances.html">Alliances</a></h2>
+    <ul>
+      <li><strong>Link with a server you trust</strong> using a one-time code, choosing the roles you share (Discord roles or bot roles such as Healer), and map them onto the ally’s roles (the ally can override for its events).</li>
+      <li><strong>Share an event</strong> with allies, once: one roster, signed up from either server; members who don’t fit become join requests.</li>
+      <li><strong>Find replacements:</strong> ask allies for the players you still need; their members apply and your organizers choose.</li>
+      <li><strong>You decide</strong> who can share and ask, and whether you take each ally’s shared events, replacement searches, or both.</li>
+      <li><strong>Invite codes</strong> (Paid): open one event to any server; its members apply.</li>
+    </ul>
+
     <h2 id="admins"><a href="guide-admins.html">For server admins</a></h2>
     <ul>
       <li><code>/setup</code> walks through the basics; <code>/settings</code> has everything, section by section.</li>
@@ -62,7 +71,7 @@
 
     <h2 id="privacy">Privacy</h2>
     <ul>
-      <li><code>/privacy redact</code> hides your name and mentions in the bot’s posts, everywhere, while your signups keep working.</li>
+      <li><code>/privacy redact</code> hides your name and mentions in the bot’s posts, everywhere. Your signups through Discord’s <strong>Interested</strong> keep working (shown as <code>&lt;redacted upon request&gt;</code> in their place), and you can always leave; the bot’s own sign-up buttons and everything across servers (signing up or applying through an allied server, Visitor invites) are off for you, since they’d only send a nameless entry.</li>
       <li><code>/privacy delete</code> deletes your signups and attendance everywhere and stops the bot tracking you. Signing up again yourself turns tracking back on. <code>/privacy resume</code> undoes both <code>redact</code> and <code>delete</code> from then on: the bot tracks you and shows your name again (deleted data and posts already redacted stay as they are).</li>
       <li>Data about ended events is deleted automatically after 90 days; attendance records are kept. Details are in the <a href="privacy.html">Privacy Policy</a>.</li>
     </ul>

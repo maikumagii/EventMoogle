@@ -10,7 +10,7 @@
   <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
   <main>
     <h1>For event organizers</h1>
-    <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <strong>Organizers</strong> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-admins.html">Server admins</a></p>
+    <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <strong>Organizers</strong> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-alliances.html">Alliances</a> · <a href="guide-admins.html">Server admins</a></p>
     <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button (or <code>/roster manage</code>) and the <code>/roster</code> command, used inside the event’s thread. Restricting who can sign up has <a href="guide-restricted.html">its own page</a>, as does <a href="guide-attendance.html">attendance</a>.</p>
 
     <h2 id="presets">Choosing the roster</h2>
@@ -40,8 +40,11 @@ Slots: Healer, 2x Tank</pre>
       <li>Listed players (mentions, or names that match exactly one member) take the first slots and are signed up for you. In servers that sign up only through Discord’s Interested button, their places are reserved until they click Interested (not for anyone who said they can’t make it).</li>
       <li><code>Open slots</code> adds slots anyone can fill; <code>Slots</code> adds slots for roles or categories by name (<code>Open</code> for an open one).</li>
       <li>Edit the description and the roster follows, until someone who isn’t listed (other than you, the creator) signs up. Names or roles the bot can’t find are listed in the thread.</li>
-      <li>Other lines in the description: <code>Restricted:</code> and <code>Private:</code> (see <a href="guide-restricted.html">Restricted events</a>), <code>Voice: required</code> (see <a href="guide-attendance.html#voice-required">Attendance</a>).</li>
+      <li>Other lines in the description: <code>Restricted:</code> and <code>Private:</code> (see <a href="guide-restricted.html">Restricted events</a>), <code>Voice: required</code> (see <a href="guide-attendance.html#voice-required">Attendance</a>), <code>Crosspost:</code> (see <a href="guide-alliances.html#sharing">Alliances</a>).</li>
     </ul>
+
+    <h2 id="cancelled">Cancelled events</h2>
+    <p>Cancel (or delete) an event in Discord before it starts and the bot doesn’t just tidy it away: the thread says <strong>This event was cancelled</strong> and mentions everyone signed up, the roster loses its buttons, and the announcement says it was cancelled. Allied servers’ posts of it say so too, mentioning their members. Everything stays until the time the event was due to start, so nobody misses the news; then the thread is archived as usual.</p>
 
     <h2 id="recurring">Recurring events</h2>
     <p>Each date of a repeating Discord event gets its own post, thread and roster. When a date ends, its thread is archived and the next date is posted. Members who are <strong>Interested</strong> in the series carry over to every date, keeping their place in line; <em>Not interested</em> on one date leaves them out of that date only. <strong>Join</strong> counts for one date: mark Interested to stay on the series.</p>
