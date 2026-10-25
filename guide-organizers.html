@@ -11,25 +11,28 @@
   <main>
     <h1>For event organizers</h1>
     <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <strong>Organizers</strong> · <a href="guide-restricted.html">Restricted events</a> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-alliances.html">Alliances</a> · <a href="guide-admins.html">Server admins</a></p>
-    <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button (or <code>/roster manage</code>) and the <code>/roster</code> command, used inside the event’s thread. Restricting who can sign up has <a href="guide-restricted.html">its own page</a>, as does <a href="guide-attendance.html">attendance</a>.</p>
+    <p>The person who created a Discord event, and server administrators, can organize it. Organizer tools are in the roster’s <strong>Manage</strong> button in the event’s thread. Restricting who can sign up has <a href="guide-restricted.html">its own page</a>, as does <a href="guide-attendance.html">attendance</a>.</p>
 
     <h2 id="presets">Choosing the roster</h2>
     <ul>
       <li><strong>Presets</strong> are rosters the server has saved, such as “Raid: 2 Tanks, 2 Healers, 4 DPS” or “Scrim: 5 players”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Keywords match whole words and their plurals (<em>raid</em> matches “Raids”), and <code>mage + sortie</code> needs both words in any order (“Sortie with Mages”). Presets are in an order the admins set: the first one with a matching keyword wins. Until someone other than you signs up (Discord marks you Interested when you create the event), renaming the event picks the matching preset again.</li>
       <li>After that, renaming the event to match a different preset posts an <strong>Apply / Keep current</strong> prompt for you.</li>
-      <li><code>/roster preset</code> (or Manage → <em>Apply a preset</em>) applies any preset by hand.</li>
-      <li><code>/roster expand</code> adds a party, copied from the preset’s repeatable party and adjusted in a form; <code>/roster shrink</code> removes the last party.</li>
-      <li><code>/roster slots</code> and <code>/roster role</code> set this event’s own size and role slots.</li>
+      <li>Manage → <em>Party Composition</em> → <em>Apply a preset</em> applies any preset by hand.</li>
+      <li>Manage → <em>Party Composition</em> → <em>Add a party…</em> adds a party, copied from the preset’s repeatable party and adjusted in a form; <em>Remove party</em> removes the last party.</li>
+      <li>Manage → <em>Party Composition</em> → <em>Edit Composition…</em> sets this event’s own size and role slots.</li>
     </ul>
 
     <h2 id="arranging">Arranging players</h2>
-    <p>Press <strong>Manage</strong> on the roster (or run <code>/roster manage</code> in the event’s thread). The private panel does it all:</p>
+    <p>Press <strong>Manage</strong> on the roster. The private panel does it all:</p>
     <ul>
-      <li><strong>Choose a player</strong> from the list, then <em>Move…</em> (pin them into a party; Paid), <em>Swap…</em> (with another player; Paid: <em>Swap parties</em> moves each to the other’s party, into a slot they fit; <em>Swap places</em> gives each the other’s exact slot and its role, and keeps them there), <em>Unpin</em>, <em>Remove</em> (exclude them, even if Interested) or <em>Set role…</em> (the role they’re bringing). Your placements win over a member’s role fit.</li>
-      <li><strong>Add a player</strong> puts someone at the front of the signups.</li>
-      <li><em>Slots…</em> sets this event’s size and role slots; apply a preset; add or remove a party; <em>Fill from standby now</em>; <em>Attendance…</em> (Paid).</li>
+      <li>Choose <strong>Add a Player</strong>, <strong>Remove a Player</strong>, <strong>Move/Swap a Player</strong> or <strong>Pin a Player's Role</strong> from the dropdown, then select the player.</li>
+      <li><strong>Add a Player</strong> puts them at the front of the queue, including someone previously on standby. <strong>Remove a Player</strong> excludes them from this event; they cannot sign back up unless an organizer adds them again.</li>
+      <li><strong>Move/Swap a Player</strong> offers <em>Move…</em> (pin them into another party; Paid), <em>Swap…</em> (Paid) and <em>Unpin</em> (restore automatic placement). <em>Swap parties</em> keeps each player's role fit; <em>Swap places</em> gives each the other's exact slot and its role.</li>
+      <li><strong>Pin a Player's Role</strong> specifies the role they are bringing without changing signup priority.</li>
+      <li>The bottom row has <strong>Fill from Standby</strong>, <strong>Party Composition</strong> and <strong>Community…</strong>. Party Composition holds this event's slots, preset and party tools; Community holds sharing, replacements and invite codes.</li>
     </ul>
-    <p><code>/roster</code> has <code>manage</code>, <code>attendance</code> and <code>export</code> (a CSV of the roster; Paid). With <em>Expanded commands</em> on (<code>/settings</code> → General), it also has typed versions of every panel action: <code>move</code>, <code>swap</code>, <code>unpin</code>, <code>add</code>, <code>remove</code>, <code>set-role</code>, <code>fill</code>, <code>slots</code>, <code>role</code>, <code>preset</code>, <code>expand</code> and <code>shrink</code>. The panel lists the first 25 signups; for bigger events, use the typed commands.</p>
+    <p>Attendance is on the pre-event roster when enabled. Organizer tools use the private panel; there is no <code>/roster</code> command or Export roster action in Manage.</p>
+    <p>New event threads combine the introduction, its notification mentions and initial roster in one card. Later roster edits do not repeat the notification. The pre-event roster still notifies its selected players when configured. Existing separate posts keep their IDs; unusually long introductions and rosters remain separate to retain all text.</p>
 
     <h2 id="description-setup">Setting up from the event description</h2>
     <p>Write a block like this in the Discord event’s description:</p>
@@ -55,7 +58,7 @@ Slots: Healer, 2x Tank</pre>
       <li>The roster shows ✅ for confirmed and ⏳ for waiting. One reminder pings those who haven't answered (2 hours before the deadline by default).</li>
       <li>At the deadline (4 hours before the start by default), anyone who hasn't confirmed moves aside and standbys take their places; confirming later puts them back on standby.</li>
       <li>Joining, or marking Interested on that date, counts as confirming; Discord's <em>Not interested</em> on that date counts as Can't make it. If the date is rescheduled or started early, the answers move with it.</li>
-      <li>On Paid, <code>/attendance lookup</code> shows how often each member confirmed, declined or didn't answer.</li>
+      <li>On Paid, <code>/attendance</code> opens Attendance management; select a member to see how often they confirmed, declined or didn't answer.</li>
     </ul>
     <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
   </main>

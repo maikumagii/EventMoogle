@@ -14,32 +14,37 @@
     <p>All of this is in <code>/settings</code> (needs Manage Server, unless your server changed <a href="guide-admins.html#settings">Settings access</a>).</p>
 
     <h2 id="categories">Categories</h2>
-    <p><code>/settings</code> → Categories. A category is a name that stands for several roles, such as Healer = Cleric, Druid: any of its member roles fills a Healer slot, and reminders reach them.</p>
+    <p><code>/settings</code> → Roles → Categories (Paid). A category is a name that stands for several roles, such as Healer = Cleric, Druid: any of its member roles fills a Healer slot, and reminders reach them.</p>
     <ul>
       <li><strong>Without a Discord role:</strong> type a new name and choose <em>Name only</em>. It works by name alone in slots, ping rules and <em>Who can sign up</em>, and anything that would ping it pings its member roles. (<em>Create role</em> makes a role for it instead, which can be @mentioned; <em>Cancel</em> is for a typo.)</li>
-      <li><strong>With a role of its own:</strong> the role is <strong>automatic on Paid</strong> (<em>Let the bot manage role</em>: the bot gives and removes it to match members’ roles) and <strong>manual on Free</strong> (you give it, or members pick it).</li>
+      <li><strong>With a role of its own:</strong> the role is <strong>automatic on Paid</strong> (while Management is on, the bot gives and removes it to match members’ roles; no per-category switch is needed) and <strong>manual on Free</strong> (you give it, or members pick it).</li>
     </ul>
 
-    <h2 id="self-assignable">Self-assignable roles</h2>
-    <p><code>/settings</code> → Self-assignable roles: the roles members can pick with <code>/roles</code> and <code>/whoami</code>.</p>
+    <p>Category editing requires Paid. If Paid expires, existing definitions and Discord roles are kept and category roles become manual. Automatic management resumes when Paid is restored and Management is on.</p>
+
+    <h2 id="self-assignable">Management</h2>
+    <p><strong>Role management</strong> starts off for new servers. Enable it in <code>/settings</code> → Roles → Management → Settings, then return to Management and press <em>Check Role Setup</em>. EventMoogle needs Manage Roles and its role above the configured roles it assigns. Matching-only and ping-only roles do not need to move. The default invite includes Manage Roles; older installs without it get a re-invite link. Permission or hierarchy problems appear in Status and the configured admin channel.</p>
+    <p>The switch controls self-roles, automatic category roles and linked static roles. Turning it off preserves Discord roles and group data. Matching, restrictions and pings still work; static membership can still be edited in the database.</p>
+    <p><code>/settings</code> → Roles → Management: the roles members can pick with <code>/whoami</code>.</p>
     <ul>
-      <li>Up to four named groups (for example <em>Classes</em> and <em>Events</em>), one menu each. A <em>Notifications</em> menu is added from the roles your ping rules mention (<em>Offer ping roles</em> turns it off); a ping role that's also in a group is listed in both unless <em>Repeat group roles in Notifications</em> is off.</li>
-      <li><em>Members can pick roles: Off</em> leaves roles to staff: <code>/roles</code> is off and <code>/whoami</code> only sets nicknames and preferences.</li>
+      <li>Up to four named groups (for example <em>Classes</em> and <em>Events</em>), one menu each. A <em>Notifications</em> menu is added from the roles your ping rules mention (<em>Settings → Offer Ping Roles</em> turns it off); a ping role that's also in a group is listed in both unless <em>Settings → Repeat Group Roles in Notifications</em> is off.</li>
+      <li><em>Management: Off</em> leaves roles to staff: <code>/whoami</code> only sets nicknames and preferences.</li>
       <li>The bot can only give roles below its own: a role above it stays in its group, marked ⚠️ with how to fix it, and is offered once you drag the bot’s role above it in Server Settings → Roles. Roles that grant permissions need your confirmation first (see <a href="guide-admins.html#safety">Safety</a>).</li>
     </ul>
 
-    <h2 id="role-posts">Role posts and button looks</h2>
+    <h2 id="role-posts">Channel, role posts and button looks</h2>
+    <p>Open <code>/settings</code> → Roles → Channel for channel selection, Add/Remove Role Posts, Edit Post Texts, Edit Looks and Pick Emojis.</p>
     <ul>
-      <li><em>Post role buttons</em> keeps a post per group in the roles channel (chosen under General), with a button per role: members press it to add the role and again to remove it, and <em>Show my …</em> privately lists which of that post’s roles they have. <em>Edit post texts…</em> sets the line under each post’s heading. The posts follow the groups and switches.</li>
-      <li><strong>Button looks:</strong> choose a group in the last menu, then <em>Edit looks…</em>. A group’s buttons get a colour (grey, blurple, green or red: the four Discord allows), and each role an emoji (<code>Tank: 🛡️</code>, or a server emoji as <code>:name:</code>), a colour of its own if wanted (<code>Healer: 💚 green</code>), and a name for its button in quotes (<code>WAR: ⚔️ red "Warrior"</code> shows ⚔️ Warrior on a red button). Emoji and names show in the <code>/roles</code> and <code>/whoami</code> menus too; a role with an emoji icon uses it until you set one.</li>
-      <li><em>Pick emoji with reactions</em> lets you choose emoji with Discord’s own emoji picker instead: the bot opens a private thread for you in the admin channel (or the announcement channel), asks for one role at a time, and deletes the thread when you’re done.</li>
+      <li><em>Add Role Posts</em> keeps a post per group in the roles channel (chosen under Roles → Channel), with a button per role: members press it to add the role and again to remove it, and <em>Show my …</em> privately lists which of that post’s roles they have. <em>Edit Post Texts</em> sets the line under each post’s heading. The posts follow the groups and switches.</li>
+      <li><strong>Button looks:</strong> choose a group in the last menu, then <em>Edit Looks</em>. A group’s buttons get a colour (grey, blurple, green or red: the four Discord allows), and each role an emoji (<code>Tank: 🛡️</code>, or a server emoji as <code>:name:</code>), a colour of its own if wanted (<code>Healer: 💚 green</code>), and a name for its button in quotes (<code>WAR: ⚔️ red "Warrior"</code> shows ⚔️ Warrior on a red button). Emoji and names show in the <code>/whoami</code> menus too; a role with an emoji icon uses it until you set one.</li>
+      <li><em>Pick Emojis</em> lets you choose emoji with Discord’s own emoji picker instead: the bot opens a private thread for you in the admin channel (or the announcement channel), asks for one role at a time, and deletes the thread when you’re done.</li>
     </ul>
 
     <h2 id="entry-button">Entry button</h2>
-    <p><code>/settings</code> → Entry button: a post with one button, in a channel you choose (your rules or welcome channel), that gives new members a role such as <em>Member</em> to let them into the server: a light alternative to a verification bot. It only adds the role (staff remove it) and is kept apart from the self-assignable roles. Choose the channel and role, edit the text and button label, and optionally apply the new-member wait from Safety. Blocked members can’t use it, and each entry is in the audit log. (Discord’s own Onboarding, on Community servers, can do this too.)</p>
+    <p>The entry button was retired in v3.1. Old buttons cannot grant roles; EventMoogle removes their controls while preserving message text, embeds and attachments. Failed cleanup retries and is reported to admins. Existing Discord roles remain. Use Discord’s Onboarding for server entry.</p>
 
     <h2 id="typing-roles">Typing role names, and unused roles</h2>
-    <p>Roles can be typed by name. If a name matches no role, the form offers to create it: new roles have no permissions and go to the bottom of the role list. <em>Unused roles…</em> (under Self-assignable roles) lists roles the bot created that nothing uses any more, split into those nobody has and those people have, with a delete button for each (the second asks twice). If several roles share a name, it offers to remove the extra copies (the oldest is kept, and only copies with no members and no permissions are removed). A role that already exists is never created again. The bot needs Manage Roles for that, and for category roles and <code>/roles</code>, with its own role above the roles it manages.</p>
+    <p>Roles can be typed by name. If a name matches no role, the form offers to create it: new roles have no permissions and go to the bottom of the role list. <em>Unused Roles</em> (under Roles → Management) lists roles the bot created that nothing uses any more, split into those nobody has and those people have, with a delete button for each (the second asks twice). If several roles share a name, it offers to remove the extra copies (the oldest is kept, and only copies with no members and no permissions are removed). A role that already exists is never created again. The bot needs Manage Roles for that, and for category roles and self-assignable roles, with its own role above the roles it manages.</p>
     <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
   </main>
   <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>

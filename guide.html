@@ -32,7 +32,7 @@
     <h2 id="restricted"><a href="guide-restricted.html">Restricted events</a></h2>
     <ul>
       <li><strong>Only certain roles</strong> can sign up, from a <code>Restricted:</code> line or a preset; private threads by default.</li>
-      <li><strong>Open enrollment</strong> lets anyone in for one date; <strong>statics</strong> are fixed groups with their own role, made by admins or by members with the static button.</li>
+      <li><strong>Open enrollment</strong> lets anyone in for one date; <strong>statics</strong> are fixed groups with optional Discord roles, made by admins or by members with the static button.</li>
     </ul>
 
     <h2 id="attendance"><a href="guide-attendance.html">Attendance</a> (Paid)</h2>
@@ -44,8 +44,8 @@
     <h2 id="roles"><a href="guide-roles.html">Roles</a></h2>
     <ul>
       <li><strong>Categories</strong> such as Healer = Cleric, Druid, with or without a role of their own.</li>
-      <li><strong>Self-assignable roles</strong> in <code>/roles</code> and <code>/whoami</code>, and button posts in your roles channel with emoji, colours and names.</li>
-      <li><strong>An entry button</strong> that lets new members in, and clean-up of roles nothing uses any more.</li>
+      <li><strong>Self-assignable roles</strong> in <code>/whoami</code>, and button posts in your roles channel with emoji, colours and names.</li>
+      <li><strong>Role management</strong> is an opt-in module for self-roles, category sync and linked static roles, with setup checks and permission alerts.</li>
     </ul>
 
     <h2 id="alliances"><a href="guide-alliances.html">Alliances</a></h2>
@@ -71,8 +71,8 @@
 
     <h2 id="privacy">Privacy</h2>
     <ul>
-      <li><code>/privacy redact</code> hides your name and mentions in the bot’s posts, everywhere. Your signups through Discord’s <strong>Interested</strong> keep working (shown as <code>&lt;redacted upon request&gt;</code> in their place), and you can always leave; the bot’s own sign-up buttons and everything across servers (signing up or applying through an allied server, Visitor invites) are off for you, since they’d only send a nameless entry.</li>
-      <li><code>/privacy delete</code> deletes your signups and attendance everywhere and stops the bot tracking you. Signing up again yourself turns tracking back on. <code>/privacy resume</code> undoes both <code>redact</code> and <code>delete</code> from then on: the bot tracks you and shows your name again (deleted data and posts already redacted stay as they are).</li>
+      <li><code>/privacy</code> → <em>Redact identity</em> hides your name and mentions in the bot’s posts, everywhere. Your signups through Discord’s <strong>Interested</strong> keep working (shown as <code>&lt;redacted upon request&gt;</code> in their place), and you can always leave; the bot’s own sign-up buttons and everything across servers (signing up or applying through an allied server, Visitor invites) are off for you, since they’d only send a nameless entry.</li>
+      <li><code>/privacy</code> → <em>Delete my data</em> deletes your signups and attendance everywhere and stops the bot tracking you. Signing up again yourself turns tracking back on. <code>/privacy</code> → <em>Resume</em> undoes both <code>redact</code> and <code>delete</code> from then on: the bot tracks you and shows your name again (deleted data and posts already redacted stay as they are).</li>
       <li>Data about ended events is deleted automatically after 90 days; attendance records are kept. Details are in the <a href="privacy.html">Privacy Policy</a>.</li>
     </ul>
 

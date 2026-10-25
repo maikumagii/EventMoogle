@@ -34,10 +34,12 @@
     </ul>
 
     <h2 id="statics">Statics</h2>
-    <p>A static is a fixed group, such as a raid static, with its own role (made by the bot, with no permissions). Membership is holding the role, so <code>Restricted: Raid Static</code> restricts an event to it.</p>
+    <p>A static is a fixed group, such as a raid static. EventMoogle stores its members in the database, so <code>Restricted: Raid Static</code> works even without a Discord role. With Role management enabled, new statics also get a role with no permissions. Existing linked-role members are imported from a complete Discord member cache; later manual Discord role changes stay in sync. Incomplete imports remain pending.</p>
+    <p>Turning Role management off preserves the group and its Discord role; membership controls still edit the group but stop changing Discord roles. Deleting a linked role preserves the group and its restrictions. Group pings use the role when its complete member list exactly matches the group and that saves pings, otherwise they mention members individually.</p>
     <ul>
-      <li><strong>Admins</strong> manage statics in <code>/settings</code> → Statics: <em>Create static…</em> names it; add and remove members; <em>Set leader…</em>; <em>Dissolve…</em> takes the role from everyone, then keeps or deletes it.</li>
-      <li><strong>Leaders</strong> add and remove members with <code>/static</code>.</li>
+      <li><strong>Admins</strong> manage statics in <code>/settings</code> → Statics: <em>Create static…</em> names it; add and remove members; <em>Leader and card…</em> sets its leader and where its card goes; <em>Dissolve…</em> removes the group and, with Role management enabled, takes its linked role from members or deletes it.</li>
+      <li><strong>Leaders</strong> add and remove members by right-clicking a member → <em>Apps</em> → <em>Add to my static</em> or <em>Remove from my static</em> (asked which, if they lead several), or with <em>Manage members</em> on the static’s card.</li>
+      <li><strong>The card:</strong> a post in a channel admins choose, usually the static’s own, showing its leader and members. It updates as members come and go.</li>
       <li><strong>The static button:</strong> <em>Static button…</em> posts a button in a channel you choose so any member can make statics of their own. <em>Create a static</em> asks for a name and what it’s for (one of the server’s ping roles, or none); each member can have one static per ping role, plus one without. They lead it, and <em>My statics</em> lets them add and remove members, rename it, change what it’s for, or dissolve it, for their own statics only.</li>
     </ul>
     <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>

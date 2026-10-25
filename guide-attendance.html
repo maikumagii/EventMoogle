@@ -10,19 +10,21 @@
   <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
   <main>
     <h1>Attendance (Paid)</h1>
+    <p>Open <strong>/settings → Insights → Attendance</strong> for a filterable member overview, recent events, member history and CSV exports. Members affected by the attendance rule or one counted miss away appear first. Use <strong>Attendance Rules</strong> to configure the policy. Select a member and choose <strong>Edit attendance</strong> to correct a saved event, or select a recent event to edit its recorded roster. Choose Attended, Late or No-Show and press <strong>Save Attendance</strong>; deselect a member from the chosen mark to clear it. Historical records remain editable after the original event or roster is gone. Reports and corrections retain the attendance permissions and Paid requirement.</p>
+    <p>Only the server owner sees <strong>Wipe server attendance</strong>. Type <code>WIPE</code> to permanently delete all server attendance marks, event attendance records, voice history and recurring confirmations. This cannot be undone. Attendance rules and member exemptions are preserved; future attendance is recorded normally.</p>
     <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <a href="guide-restricted.html">Restricted events</a> · <strong>Attendance</strong> · <a href="guide-roles.html">Roles</a> · <a href="guide-alliances.html">Alliances</a> · <a href="guide-admins.html">Server admins</a></p>
 
     <h2 id="tracking">Taking attendance</h2>
     <ul>
       <li>For events in a voice channel, the bot notes who was in the channel during the event and pre-marks them as attended.</li>
-      <li><code>/roster attendance</code> (or Manage → <em>Attendance…</em>) opens a checklist to confirm or correct it, during or after the event. It shows how often each player was seen in voice, and 🕒 how late they joined.</li>
+      <li>The pre-event roster’s <strong>Attendance</strong> button (when enabled) opens a roster-only editor, during or after the event. Choose <strong>Attended</strong>, <strong>Late</strong> or <strong>No-Show</strong>, select the players receiving that mark, then press <strong>Save Attendance</strong>. <strong>Mark all Attended</strong> marks every roster player, across all pages. Unmarked players stay unmarked; interested members, standby players and earlier placements outside the posted roster do not become no-shows. Voice samples and 🕒 late-arrival suggestions remain visible. Manual choices override voice suggestions; a manual Late mark does not invent an arrival time.</li>
     </ul>
 
     <h2 id="history">History and export</h2>
     <ul>
-      <li><code>/attendance me</code> shows your own record: attended, half and late attendances, no-shows, your rate, and where you stand under the no-show rule.</li>
-      <li><code>/attendance lookup</code> and <code>/attendance recent</code> show history and attendance rates (for members who can manage events).</li>
-      <li><code>/attendance export</code> downloads every attendance mark and recurring-date answer as a spreadsheet (CSV), or one member’s.</li>
+      <li><code>/attendance</code> shows ordinary members their own record: attended, half and late attendances, no-shows, your rate, and where you stand under the no-show rule.</li>
+      <li><code>/attendance</code> opens Attendance management for members who can manage events or the server: recent events, member lookup and attendance rates.</li>
+      <li>In Attendance management, <em>Export CSV</em> downloads every attendance mark and recurring-date answer, or the selected member’s.</li>
     </ul>
 
     <h2 id="how-it-counts">How attendance counts</h2>
@@ -34,7 +36,7 @@
     </ul>
 
     <h2 id="no-show-rule">The no-show rule</h2>
-    <p>Off by default (<code>/settings</code> → Attendance rules). Members who missed more than a set share of their recent signups (no-shows in attendance, or not confirming a <a href="guide-organizers.html#confirm-attendance">recurring date</a>) wait on standby first, behind members who chose standby, and are called in at the standby fill time if places remain. Saying <em>Can't make it</em> in time isn't a miss, and the window moves on as members attend. <code>/attendance me</code> shows where you stand; admins can exempt someone with <code>/attendance exempt</code>.</p>
+    <p>Off by default (<code>/settings</code> → Attendance rules). Members who missed more than a set share of their recent signups (no-shows in attendance, or not confirming a <a href="guide-organizers.html#confirm-attendance">recurring date</a>) wait on standby first, behind members who chose standby, and are called in at the standby fill time if places remain. Saying <em>Can't make it</em> in time isn't a miss, and the window moves on as members attend. <code>/attendance</code> shows where you stand; members who can manage the server can select a member in Attendance management and change their exemption.</p>
     <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
   </main>
   <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
