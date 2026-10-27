@@ -17,7 +17,7 @@
       <li><strong>Join:</strong> press <strong>Join</strong> on the roster in the event’s thread. What clicking <strong>Interested</strong> on the Discord event does depends on the server: it signs you up too, puts you on standby until you press Join, or just follows the event (you’re told if its time changes). The bot can’t mark you Interested, so after Join it links to the event in case you want Discord’s own reminder. Your place in line is the time the bot first saw you sign up; if Interested only put you on standby or following, your place counts from pressing Join.</li>
       <li><strong>Leave:</strong> remove Interested, or press <strong>Leave</strong>. If you come back within the server’s grace period (5 minutes unless changed), you keep your original place. While your place is held, <strong>Leave</strong> offers <strong>Withdraw now</strong> to give it up straight away, also after removing Interested.</li>
       <li><strong>Your role:</strong> by default you’re matched on the roles you already have. <strong>Change role</strong> lets you pick a specific role you’re bringing, “Any role I have”, or <strong>Standby</strong>.</li>
-      <li><strong>Preferences:</strong> in <code>/whoami</code> you can say which roles you prefer, and which you’d rather not play. The bot uses them when placing you on rosters, but they never cost you your place, and choosing a role for one event always wins.</li>
+      <li><strong>Preferences:</strong> in <code>/whoami</code> you can say which roles you prefer, and which you’d rather not play. The bot uses them when placing you on rosters, but they never cost you your place, and choosing a role for one event always wins. Filling the event's named role slots comes first: if you're the only one who can fill one, you're placed there even if you prefer another role. A <strong>flex</strong> slot (shown as “RDM (flex)”) takes its role first; anyone can stand in until someone with the role signs up. If that happens before the pre-event roster, the stand-in is told once, stays signed up and is first in line for the next place.</li>
       <li><strong>Role fit:</strong> the last step of <code>/whoami</code> is for a hard no: pick a preset (such as Odyssey) and the roles you’re never to be placed as in its events. You keep the role and its pings; choosing a role for one event, or an organizer placing you, still wins.</li>
       <li><strong>Standby:</strong> you wait outside the roster and are moved into an open slot shortly before the event (an hour by default), or earlier if an organizer fills from standby. You get a mention when that happens.</li>
     </ul>
@@ -35,7 +35,7 @@
     <h2 id="commands">Commands</h2>
     <table>
       <tr><th>Command</th><th>Where</th><th>What it does</th></tr>
-      <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order.</td></tr>
+      <tr><td><code>/signups</code></td><td>event thread</td><td>Privately see everyone signed up, in order, a page at a time.</td></tr>
       <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
       <tr><td><code>/whoami</code></td><td>anywhere</td><td>Set your server nickname, your roles and pings, which roles you prefer or would rather not play, and per preset the roles you never play.</td></tr>
       <tr><td><code>/attendance</code></td><td>anywhere on Paid</td><td>Open your own attendance record, or Attendance management if you can manage events or the server (see <a href="guide-attendance.html">Attendance</a>).</td></tr>
@@ -44,7 +44,7 @@
       <tr><td><code>/report-bug scope [screenshots]</code></td><td>anywhere, during community testing</td><td>Report a bug to the bot’s developers. Pick what it affects, attach up to three pictures, videos or text files, and fill in the form (what isn’t working, the steps, what should happen and what happens instead, and when). The report is posted, numbered like <code>BUG-0042</code>, in the bug channel of the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>, mentioning you if you’re a member there; the bot saves diagnostics with it for the developers (see the <a href="privacy.html">Privacy Policy</a>). A few reports an hour at most.</td></tr>
       <tr><td><code>/privacy …</code></td><td>anywhere</td><td>Hide your name in the bot’s posts, or delete your data (see <a href="guide.html#privacy">Privacy</a>).</td></tr>
     </table>
-    <p>Private replies from the bot disappear after a couple of minutes.</p>
+    <p>Short private replies from the bot disappear after a couple of minutes. Private panels, such as <code>/help</code>, <code>/signups</code> and menus, stay until they expire, then say so; run the command again for a fresh one.</p>
     <p>Still stuck? Ask in the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
   </main>
   <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>

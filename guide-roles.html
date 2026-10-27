@@ -14,20 +14,20 @@
     <p>All of this is in <code>/settings</code> (needs Manage Server, unless your server changed <a href="guide-admins.html#settings">Settings access</a>).</p>
 
     <h2 id="categories">Categories</h2>
-    <p><code>/settings</code> → Roles → Categories (Paid). A category is a name that stands for several roles, such as Healer = Cleric, Druid: any of its member roles fills a Healer slot, and reminders reach them.</p>
+    <p><code>/settings</code> → Roles → Categories. A category is a name that stands for several roles, such as Healer = Cleric, Druid: any of its member roles fills a Healer slot, and reminders reach them.</p>
     <ul>
-      <li><strong>Without a Discord role:</strong> type a new name and choose <em>Name only</em>. It works by name alone in slots, ping rules and <em>Who can sign up</em>, and anything that would ping it pings its member roles. (<em>Create role</em> makes a role for it instead, which can be @mentioned; <em>Cancel</em> is for a typo.)</li>
-      <li><strong>With a role of its own:</strong> the role is <strong>automatic on Paid</strong> (while Management is on, the bot gives and removes it to match members’ roles; no per-category switch is needed) and <strong>manual on Free</strong> (you give it, or members pick it).</li>
+      <li><strong>Without a Discord role:</strong> leave the role picker empty and give the category a name. It works by name alone in slots, pings and <em>Who can sign up</em>, and anything that would ping it pings its member roles. To give it a role, make the role in Discord and choose it in the form.</li>
+      <li><strong>With a role of its own:</strong> it's <strong>manual</strong> unless you turn on <em>Automatic</em> for it (Paid): then, while Management is on, the bot gives and removes it to match members’ roles. Manual means you give it, or members pick it.</li>
     </ul>
 
-    <p>Category editing requires Paid. If Paid expires, existing definitions and Discord roles are kept and category roles become manual. Automatic management resumes when Paid is restored and Management is on.</p>
+    <p>Every plan can create, edit and remove categories. If Paid expires, categories and Discord roles are kept and automatic ones turn manual; they resume when Paid is restored and Management is on. On Paid, the Inbox lists categories that could be automatic but aren't (<em>Get the most out of your subscription</em>); it never posts to the admin channel, and marking it read leaves them manual until another category could be automatic.</p>
 
     <h2 id="self-assignable">Management</h2>
-    <p><strong>Role management</strong> starts off for new servers. Enable it in <code>/settings</code> → Roles → Management → Settings, then return to Management and press <em>Check Role Setup</em>. EventMoogle needs Manage Roles and its role above the configured roles it assigns. Matching-only and ping-only roles do not need to move. The default invite includes Manage Roles; older installs without it get a re-invite link. Permission or hierarchy problems appear in Status and the configured admin channel.</p>
+    <p><strong>Role management</strong> is on for new servers (servers that had it off keep it off). Turn it on or off in <code>/settings</code> → Roles → Management → Settings; <code>/setup</code>'s Roles step and <em>Check Role Setup</em> check the bot's role first. EventMoogle needs Manage Roles and its role above the configured roles it assigns. Matching-only and ping-only roles do not need to move. The default invite includes Manage Roles; older installs without it get a re-invite link. Permission or hierarchy problems appear in Status and the configured admin channel.</p>
     <p>The switch controls self-roles, automatic category roles and linked static roles. Turning it off preserves Discord roles and group data. Matching, restrictions and pings still work; static membership can still be edited in the database.</p>
     <p><code>/settings</code> → Roles → Management: the roles members can pick with <code>/whoami</code>.</p>
     <ul>
-      <li>Up to four named groups (for example <em>Classes</em> and <em>Events</em>), one menu each. A <em>Notifications</em> menu is added from the roles your ping rules mention (<em>Settings → Offer Ping Roles</em> turns it off); a ping role that's also in a group is listed in both unless <em>Settings → Repeat Group Roles in Notifications</em> is off.</li>
+      <li>Up to four named groups (for example <em>Classes</em> and <em>Events</em>), one menu each. A <em>Notifications</em> menu is added from the roles your presets ping (<em>Settings → Offer Ping Roles</em> turns it off); a ping role that's also in a group is listed in both unless <em>Settings → Repeat Group Roles in Notifications</em> is off.</li>
       <li><em>Management: Off</em> leaves roles to staff: <code>/whoami</code> only sets nicknames and preferences.</li>
       <li>The bot can only give roles below its own: a role above it stays in its group, marked ⚠️ with how to fix it, and is offered once you drag the bot’s role above it in Server Settings → Roles. Roles that grant permissions need your confirmation first (see <a href="guide-admins.html#safety">Safety</a>).</li>
     </ul>

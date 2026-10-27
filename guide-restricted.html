@@ -13,11 +13,12 @@
     <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <strong>Restricted events</strong> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-alliances.html">Alliances</a> · <a href="guide-admins.html">Server admins</a></p>
 
     <h2 id="restricted">Restricting who can sign up</h2>
-    <p>Only members with certain roles can sign up: put <code>Restricted: Static, Officers</code> (role or category names) in a Discord event’s description, or set <em>Who can sign up</em> on a preset in <code>/settings</code> → Presets. The description line wins over the preset.</p>
+    <p>Only members with certain roles can sign up: put <code>Restricted: Static, Officers</code> (role or category names) in a Discord event’s description, or set <em>Who can sign up</em> on a preset in <code>/settings</code> → Presets. The description line wins over the preset, and <code>Restricted: no</code> lets anyone sign up for that one event. Pinging a role (or a static) never restricts who can sign up.</p>
+    <p><strong>Static presets:</strong> choose <em>Static…</em> on a preset to make it one static’s events, in place of a private channel. Its members are added to each roster and asked to confirm, only they can sign up, the static is pinged, and the thread is private (see below). <em>Open enrollment</em> opens one date to everyone without showing the private thread’s history. A preset has one static at most; <em>Who can sign up</em> applies only to presets without one.</p>
     <ul>
       <li>Others who press Join get a private reply naming the roles; their Interested clicks don’t put them on the roster. Members who gain a role appear straight away.</li>
       <li>Members already signed up when a restriction is added stay, marked 🔒 on the roster; remove them by hand if needed. Organizers can always add anyone.</li>
-      <li><strong>Pings:</strong> a restricted event pings only its roles, never ping rules or the default notification. A private event without a restriction pings nobody. Once enrollment is open on a public event, reminders ping as usual for that date.</li>
+      <li><strong>Pings:</strong> a restricted event pings only the roles it’s restricted to (for a Static preset, the static), in place of the preset’s usual pings. A private event without a restriction pings nobody. Once enrollment is open on a public event, reminders ping as usual for that date.</li>
     </ul>
 
     <h2 id="private">Private threads</h2>

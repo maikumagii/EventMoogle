@@ -15,15 +15,14 @@
 
     <h2 id="presets">Choosing the roster</h2>
     <ul>
-      <li><strong>Presets</strong> are rosters the server has saved, such as “Raid: 2 Tanks, 2 Healers, 4 DPS” or “Scrim: 5 players”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Keywords match whole words and their plurals (<em>raid</em> matches “Raids”), and <code>mage + sortie</code> needs both words in any order (“Sortie with Mages”). Presets are in an order the admins set: the first one with a matching keyword wins. Until someone other than you signs up (Discord marks you Interested when you create the event), renaming the event picks the matching preset again.</li>
-      <li>After that, renaming the event to match a different preset posts an <strong>Apply / Keep current</strong> prompt for you.</li>
-      <li>Manage → <em>Party Composition</em> → <em>Apply a preset</em> applies any preset by hand.</li>
-      <li>Manage → <em>Party Composition</em> → <em>Add a party…</em> adds a party, copied from the preset’s repeatable party and adjusted in a form; <em>Remove party</em> removes the last party.</li>
-      <li>Manage → <em>Party Composition</em> → <em>Edit Composition…</em> sets this event’s own size and role slots.</li>
+      <li><strong>Presets</strong> are rosters the server has saved, such as “Raid: 2 Tanks, 2 Healers, 4 DPS” or “Scrim: 5 players”. An event whose name contains a preset’s keyword gets that preset automatically; otherwise it gets the server’s default roster. Keywords match whole words and their plurals (<em>raid</em> matches “Raids”), and <code>mage + sortie</code> needs both words in any order (“Sortie with Mages”). Presets are in an order the admins set: the first one with a matching keyword wins.</li>
+      <li>Events keep up with their preset: renaming the event picks the matching preset again, and when an admin edits the preset, its roster or its notifications, the event updates. Signups and their order stay, nothing is posted again and nobody is pinged again.</li>
+      <li>Manage → <em>Party Composition</em> → <em>Apply a preset</em> applies any preset by hand, including ✋ manual ones. It stays applied until the event is renamed.</li>
+      <li>Manage → <em>Party Composition</em> → <em>Edit Composition…</em> builds this event’s own parties and slots from pickers: add or remove slots by role or category, add a party (a copy of the one that repeats) or remove one, then Save. That roster stays this event’s own: preset edits no longer change it. On a repeating event it applies to that date only, and the bot offers to turn it into a preset.</li>
     </ul>
 
     <h2 id="arranging">Arranging players</h2>
-    <p>Press <strong>Manage</strong> on the roster. The private panel does it all:</p>
+    <p>Press <strong>Manage</strong> on the roster. The private panel does it all in one message, like <code>/settings</code>: each tool opens in place with <em>Back to Manage</em> (Community’s sharing, replacements, join requests and applications too), and an action's result shows at the top of the menu so you can carry on. It closes after five minutes without use; press Manage again to reopen it.</p>
     <ul>
       <li>Choose <strong>Add a Player</strong>, <strong>Remove a Player</strong>, <strong>Move/Swap a Player</strong> or <strong>Pin a Player's Role</strong> from the dropdown, then select the player.</li>
       <li><strong>Add a Player</strong> puts them at the front of the queue, including someone previously on standby. <strong>Remove a Player</strong> excludes them from this event; they cannot sign back up unless an organizer adds them again.</li>
