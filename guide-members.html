@@ -32,6 +32,11 @@
       <li>When the event ends, its thread is archived: it disappears from the channel list but its history stays.</li>
     </ul>
 
+    <h2 id="statics">Your static</h2>
+    <p>A static’s card shows its members and a welcome explaining who to contact and how to plan its events. Look for it in the channel’s pinned messages; if someone unpins it, the bot leaves that choice alone. Leaders use <strong>Manage</strong>, then choose <strong>Welcome message…</strong> to write their own welcome. Leaving it blank restores the default, and mentions in it never ping.</p>
+    <p>Statics are set up by admins. Ask an admin to create one, rename it or dissolve it. Existing statics keep working. If you lead one, open <strong>Manage</strong> on its card or <code>/static</code>. The dropdown offers <strong>Members</strong> to add or remove people and <strong>Welcome message…</strong> to edit the welcome. On Paid, an admin can create private text and voice channels with a new static. See <a href="guide-restricted.html#statics">Statics</a> for the details.</p>
+    <p>Static events normally appear in the static’s text channel, or the channel holding its card. If someone opens enrollment for a date, follow the old thread’s link to its new public thread in the announcement channel. The next date returns to the static’s channel and is restricted again.</p>
+
     <h2 id="commands">Commands</h2>
     <table>
       <tr><th>Command</th><th>Where</th><th>What it does</th></tr>
@@ -39,6 +44,7 @@
       <tr><td><code>/remind [hours]</code></td><td>event thread</td><td>Ping the roles the roster still needs, now or a number of hours before the start.</td></tr>
       <tr><td><code>/whoami</code></td><td>anywhere</td><td>Set your server nickname, your roles and pings, which roles you prefer or would rather not play, and per preset the roles you never play.</td></tr>
       <tr><td><code>/attendance</code></td><td>anywhere on Paid</td><td>Open your own attendance record, or Attendance management if you can manage events or the server (see <a href="guide-attendance.html">Attendance</a>).</td></tr>
+      <tr><td><code>/static</code></td><td>anywhere in a server with statics</td><td>Manage members and the welcome of a static you lead. Admins can manage any static.</td></tr>
       <tr><td>Right-click a member → <em>Apps</em> → <em>Add to my static</em> / <em>Remove from my static</em></td><td>anywhere</td><td>Manage the members of a static you lead or use the static’s card (see <a href="guide-restricted.html#statics">Statics</a>).</td></tr>
       <tr><td><code>/help [topic]</code></td><td>anywhere</td><td>A short answer with a link to the right page of this guide.</td></tr>
       <tr><td><code>/report-bug scope [screenshots]</code></td><td>anywhere, during community testing</td><td>Report a bug to the bot’s developers. Pick what it affects, attach up to three pictures, videos or text files, and fill in the form (what isn’t working, the steps, what should happen and what happens instead, and when). The report is posted, numbered like <code>BUG-0042</code>, in the bug channel of the <a href="https://discord.gg/qtAFqV2EN4">EventMoogle community server</a>, mentioning you if you’re a member there; the bot saves diagnostics with it for the developers (see the <a href="privacy.html">Privacy Policy</a>). A few reports an hour at most.</td></tr>

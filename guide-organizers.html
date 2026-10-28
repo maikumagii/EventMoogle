@@ -21,6 +21,10 @@
       <li>Manage → <em>Party Composition</em> → <em>Edit Composition…</em> builds this event’s own parties and slots from pickers: add or remove slots by role or category, add a party (a copy of the one that repeats) or remove one, then Save. That roster stays this event’s own: preset edits no longer change it. On a repeating event it applies to that date only, and the bot offers to turn it into a preset.</li>
     </ul>
 
+    <h2 id="event-channel">Finding a static’s event</h2>
+    <p>With a Static preset and no typed Channel, new events go to the static’s text channel, otherwise its card’s channel, otherwise the announcement channel. A typed Channel takes priority; if the bot cannot use the destination, it falls back to the announcement channel and Status explains why. Existing posts stay where they are when a preset or card channel changes. The static’s welcome can tell you which keyword to put in a Discord event’s name.</p>
+    <p><strong>Open enrollment</strong> on an event posted in the static’s channel asks to move this date to the announcement channel with a new public thread. The old thread links there and is locked but stays readable. The next date returns to the static’s channel, restricted again. See <a href="guide-restricted.html#open-enrollment">Open enrollment</a>.</p>
+
     <h2 id="arranging">Arranging players</h2>
     <p>Press <strong>Manage</strong> on the roster. The private panel does it all in one message, like <code>/settings</code>: each tool opens in place with <em>Back to Manage</em> (Community’s sharing, replacements, join requests and applications too), and an action's result shows at the top of the menu so you can carry on. It closes after five minutes without use; press Manage again to reopen it.</p>
     <ul>
@@ -53,7 +57,7 @@ Slots: Healer, 2x Tank</pre>
     <h3 id="confirm-attendance">Confirm Attendance</h3>
     <p>On by default (<code>/settings</code> → Recurring events). Members Interested in the series keep a reserved place on each date and confirm it:</p>
     <ul>
-      <li>In <em>Sign up</em> mode they press <strong>Join</strong> (and <strong>Leave</strong> means “not this date”: they stay on the series); in <em>Everything</em> mode they press <strong>Confirm</strong> or <strong>Can't make it</strong>. In <em>Standby</em> and <em>Follow only</em> modes, pressing Join for each date already is the confirmation.</li>
+      <li>In <em>Sign up</em> mode they press <strong>Join</strong> (and <strong>Leave</strong> means “not this date”: they stay on the series); in <em>Interested only</em> mode they press <strong>Confirm</strong> or <strong>Can't make it</strong>. In <em>Standby</em> and <em>Follow only</em> modes, pressing Join for each date already is the confirmation.</li>
       <li>The roster shows ✅ for confirmed and ⏳ for waiting. One reminder pings those who haven't answered (2 hours before the deadline by default).</li>
       <li>At the deadline (4 hours before the start by default), anyone who hasn't confirmed moves aside and standbys take their places; confirming later puts them back on standby.</li>
       <li>Joining, or marking Interested on that date, counts as confirming; Discord's <em>Not interested</em> on that date counts as Can't make it. If the date is rescheduled or started early, the answers move with it.</li>
