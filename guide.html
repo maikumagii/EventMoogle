@@ -17,6 +17,7 @@
     <ul>
       <li><strong>Sign up</strong> with Join on the roster, or Interested on the event; <strong>leave</strong> with Leave, keeping your place if you come back within a few minutes.</li>
       <li><strong>Choose your role</strong>, or stand by for a place that opens shortly before the event.</li>
+      <li><strong>Your characters (Paid):</strong> use <code>/character</code> to save up to 24 in this server, then choose one on Join or switch with Change character. The host’s <strong>Characters on events</strong> starts at <strong>As many as you want</strong>; <strong>Only Myself</strong> turns characters off. See <a href="guide-members.html#characters">Your characters</a>.</li>
       <li><strong>Your profile</strong> with <code>/whoami</code>: nickname, roles, pings, roles you prefer or would rather not play, and roles you never play in some events.</li>
       <li><strong>The roster</strong> fills slots in signup order, promotes the next player when someone leaves, and posts a pre-event roster that mentions everyone on it.</li>
     </ul>
@@ -37,8 +38,8 @@
 
     <h2 id="attendance"><a href="guide-attendance.html">Attendance</a> (Paid)</h2>
     <ul>
-      <li><strong>Voice presence</strong> pre-fills an attendance check organizers confirm; history, rates and CSV export.</li>
-      <li><strong>Fair counting:</strong> half attendance on voice-required events, late arrivals, voiding an event, and an optional no-show rule that puts members who often miss on standby first.</li>
+      <li><strong>Voice presence</strong> in any server voice or stage channel pre-fills attendance for roster members and the creator. Use <code>/attendance</code> in the event thread; organizers get that event, other members their own record.</li>
+      <li><strong>Fair counting:</strong> ½ for late by default, lateness measured after a late leader arrives, combined late/off-voice weights, and an optional no-show rule. Unconfirmed attendance stays listed but does not count by default. See <a href="guide-attendance.html#how-it-counts">how it counts</a>.</li>
     </ul>
 
     <h2 id="roles"><a href="guide-roles.html">Roles</a></h2>
@@ -67,12 +68,12 @@
 
     <h2 id="plans">Free and Paid</h2>
     <p><strong>Free</strong> is the complete bot: signups, rosters with parties, buttons, standby, reminders, presets (the first five in your order apply automatically by keyword, any number more by hand from Manage), description setup, restricted events, every message template, and 15 events maintained at a time.</p>
-    <p><strong>Paid</strong>, a server subscription bought in Discord, adds automation and reporting: every preset applied automatically by keyword, automatic category roles, private static text and voice channels, moving and swapping players, attendance with history and stats, the audit log, CSV export, 50 events at a time, and priority when the bot is busy. If a subscription ends, nothing is deleted; Paid features pause until you subscribe again.</p>
+    <p><strong>Paid</strong>, a server subscription bought in Discord, adds automation and reporting: every preset applied automatically by keyword, automatic category roles, private static text and voice channels, characters and extra characters taking separate roster places, moving and swapping players, attendance with history and stats, the audit log, CSV export, 50 events at a time, and priority when the bot is busy. If a subscription ends, nothing is deleted; Paid features pause until you subscribe again. Character rosters read as one Myself line per member without pings; stored extras return if Paid comes back before the event.</p>
 
     <h2 id="privacy">Privacy</h2>
     <ul>
-      <li><code>/privacy</code> → <em>Redact identity</em> hides your name and mentions in the bot’s posts, everywhere. Your signups through Discord’s <strong>Interested</strong> keep working (shown as <code>&lt;redacted upon request&gt;</code> in their place), and you can always leave; the bot’s own sign-up buttons and everything across servers (signing up or applying through an allied server, Visitor invites) are off for you, since they’d only send a nameless entry.</li>
-      <li><code>/privacy</code> → <em>Delete my data</em> deletes your signups and attendance everywhere and stops the bot tracking you. Signing up again yourself turns tracking back on. <code>/privacy</code> → <em>Resume</em> undoes both <code>redact</code> and <code>delete</code> from then on: the bot tracks you and shows your name again (deleted data and posts already redacted stay as they are).</li>
+      <li><code>/privacy</code> → <em>Redact identity</em> hides your name and mentions in the bot’s posts, everywhere. Your saved characters are deleted in every server, their signups fall back to Myself, and their names are cleared from attendance and older roster posts. Your signups through Discord’s <strong>Interested</strong> keep working (shown as <code>&lt;redacted upon request&gt;</code> in their place), and you can always leave; the bot’s own sign-up buttons and everything across servers (signing up or applying through an allied server, Visitor invites) are off for you, since they’d only send a nameless entry.</li>
+      <li><code>/privacy</code> → <em>Delete my data</em> deletes your characters, signups and attendance everywhere and stops the bot tracking you. Signing up again yourself turns tracking back on. <code>/privacy</code> → <em>Resume</em> undoes both <code>redact</code> and <code>delete</code> from then on: the bot tracks you and shows your name again (deleted data and posts already redacted stay as they are).</li>
       <li>Data about ended events is deleted automatically after 90 days; attendance records are kept. Details are in the <a href="privacy.html">Privacy Policy</a>.</li>
     </ul>
 
