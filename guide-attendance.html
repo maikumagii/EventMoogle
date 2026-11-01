@@ -18,6 +18,7 @@
     <ul>
       <li>During the event window, the bot samples roster members and the event’s creator in any of the server’s voice or stage channels, even when the event has no channel. Roster members seen in at least two samples are pre-marked attended. Other members in voice are never sampled.</li>
       <li>The pre-event roster’s <strong>Attendance</strong> button (when enabled) opens a roster-only editor, during or after the event. It stays on the final roster after the event ends and the thread closes, so organizers can correct attendance later (cancelled events keep no buttons). Choose <strong>Attended</strong>, <strong>Late</strong> or <strong>No-Show</strong>, select the players receiving that mark, then press <strong>Save Attendance</strong>. <strong>Mark all Attended</strong> marks every roster player, across all pages. Unmarked players stay unmarked; interested members, standby players and earlier placements outside the posted roster do not become no-shows. Voice samples and 🕒 late-arrival suggestions remain visible. Manual choices override voice suggestions; a manual Late mark does not invent an arrival time.</li>
+      <li><strong>Add someone…</strong> adds a person who took part but wasn’t on the roster: a member who didn’t sign up, a saved guest, or a new guest (someone not on Discord). They start unmarked and stay on that event’s attendance.</li>
     </ul>
 
     <h2 id="history">History and export</h2>
@@ -26,6 +27,7 @@
       <li>Outside an event thread, <code>/attendance</code> shows ordinary members their own record: attended, half and late attendances, no-shows, your rate, and where you stand under the no-show rule.</li>
       <li><code>/attendance</code> opens Attendance management for members who can manage events or the server: recent events, member lookup and attendance rates.</li>
       <li>In Attendance management, <em>Export CSV</em> downloads every attendance mark and recurring-date answer, or the selected member’s.</li>
+      <li><em>Guests</em> lists the people not on Discord that organizers added. Choose one to see their record, link them to their account once they join Discord (their attendance moves over), or delete them with everything recorded about them. Guests are left out of the no-show rule.</li>
     </ul>
 
     <h2 id="how-it-counts">How attendance counts</h2>
