@@ -14,17 +14,17 @@
     <p>All of this is in <code>/settings</code> (needs Manage Server, unless your server changed <a href="guide-admins.html#settings">Settings access</a>).</p>
 
     <h2 id="categories">Categories</h2>
-    <p><code>/settings</code> → Roles → Categories. A category is a name that stands for several roles, such as Healer = Cleric, Druid: any of its member roles fills a Healer slot, and reminders reach them.</p>
+    <p><code>/settings</code> → Roles → Categories. A category is a name that stands for several roles, such as Healer = Cleric, Druid: any of its member roles fills a Healer slot, and reminders reach them. A category needs at least one member role other than itself; members can also come from categories and statics in the form.</p>
     <ul>
-      <li><strong>Without a Discord role:</strong> leave the role picker empty and give the category a name. It works by name alone in slots, pings and <em>Who can sign up</em>, and anything that would ping it pings its member roles. To give it a role, make the role in Discord and choose it in the form.</li>
+      <li><strong>Without a Discord role:</strong> press <em>Add category…</em>, give it a name and its member roles, and leave the role picker empty. No role is created. <em>Edit category…</em> renames it, and everything using it follows. It works by name alone in slots, pings and <em>Who can sign up</em>, and anything that would ping it pings its member roles. To give it a role, make the role in Discord and choose it in the form.</li>
       <li><strong>With a role of its own:</strong> it's <strong>manual</strong> unless you turn on <em>Automatic</em> for it (Paid): then, while Management is on, the bot gives and removes it to match members’ roles. Manual means you give it, or members pick it.</li>
     </ul>
 
     <p>Every plan can create, edit and remove categories. If Paid expires, categories and Discord roles are kept and automatic ones turn manual; they resume when Paid is restored and Management is on. On Paid, the Inbox lists categories that could be automatic but aren't (<em>Get the most out of your subscription</em>); it never posts to the admin channel, and marking it read leaves them manual until another category could be automatic.</p>
 
     <h2 id="self-assignable">Management</h2>
-    <p><strong>Role management</strong> is on for new servers (servers that had it off keep it off). Turn it on or off in <code>/settings</code> → Roles → Management → Settings; <code>/setup</code>'s Roles step and <em>Check Role Setup</em> check the bot's role first. EventMoogle needs Manage Roles and its role above the configured roles it assigns. Matching-only and ping-only roles do not need to move. The default invite includes Manage Roles; older installs without it get a re-invite link. Permission or hierarchy problems appear in Status and the configured admin channel.</p>
-    <p>The switch controls self-roles, automatic category roles and linked static roles. Turning it off preserves Discord roles and group data. Matching, restrictions and pings still work; static membership can still be edited in the database.</p>
+    <p><strong>Role management</strong> is on for new servers (servers that had it off keep it off). Turn it on or off in <code>/settings</code> → Roles → Management → Settings; <code>/setup</code>'s Roles step and <em>Check Role Setup</em> check the bot's role first. EventMoogle needs Manage Roles and its role above the roles it gives. Matching-only and ping-only roles do not need to move. The default invite includes Manage Roles; older installs without it get a re-invite link. Permission or hierarchy problems appear in Status and the chosen admin channel.</p>
+    <p>The switch controls self-roles, automatic category roles and linked static roles. Turning it off preserves Discord roles and group data. Matching, restrictions and pings still work; leaders can still edit static membership.</p>
     <p><code>/settings</code> → Roles → Management: the roles members can pick with <code>/whoami</code>.</p>
     <ul>
       <li>Up to four named groups (for example <em>Classes</em> and <em>Events</em>), one menu each. A <em>Notifications</em> menu is added from the roles your presets ping (<em>Settings → Offer Ping Roles</em> turns it off); a ping role that's also in a group is listed in both unless <em>Settings → Repeat Group Roles in Notifications</em> is off.</li>
@@ -40,8 +40,8 @@
       <li><em>Pick Emojis</em> lets you choose emoji with Discord’s own emoji picker instead: the bot opens a private thread for you in the admin channel (or the announcement channel), asks for one role at a time, and deletes the thread when you’re done.</li>
     </ul>
 
-    <h2 id="entry-button">Entry button</h2>
-    <p>The entry button was retired in v3.1. Old buttons cannot grant roles; EventMoogle removes their controls while preserving message text, embeds and attachments. Failed cleanup retries and is reported to admins. Existing Discord roles remain. Use Discord’s Onboarding for server entry.</p>
+    <h2 id="entry-button">Old access posts</h2>
+    <p>If an old access post still has a button, it cannot grant roles. Ask staff about access, or use Discord’s Onboarding. Admins can delete the old post, or give the bot access so it can remove the button; its other text and attachments stay.</p>
 
     <h2 id="typing-roles">Typing role names, and unused roles</h2>
     <p>Roles can be typed by name. If a name matches no role, the form offers to create it: new roles have no permissions and go to the bottom of the role list. <em>Unused Roles</em> (under Roles → Management) lists roles the bot created that nothing uses any more, split into those nobody has and those people have, with a delete button for each (the second asks twice). If several roles share a name, it offers to remove the extra copies (the oldest is kept, and only copies with no members and no permissions are removed). A role that already exists is never created again. The bot needs Manage Roles for that, and for category roles and self-assignable roles, with its own role above the roles it manages.</p>
