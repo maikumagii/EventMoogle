@@ -3,11 +3,11 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Restricted events — Event Moogle User Guide</title>
+  <title>Restricted events — RaidersNexus User Guide</title>
   <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <nav aria-label="Pages"><a href="index.html">Event Moogle</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
+  <nav aria-label="Pages"><a href="index.html">RaidersNexus</a><a href="guide.html">User Guide</a><a href="terms.html">Terms of Service</a><a href="privacy.html">Privacy Policy</a></nav>
   <main>
     <h1>Restricted events and statics</h1>
     <p class="toc"><a href="guide.html">Overview</a> · <a href="guide-members.html">Members</a> · <a href="guide-organizers.html">Organizers</a> · <strong>Restricted events</strong> · <a href="guide-attendance.html">Attendance</a> · <a href="guide-roles.html">Roles</a> · <a href="guide-alliances.html">Alliances</a> · <a href="guide-admins.html">Server admins</a></p>
@@ -38,7 +38,7 @@
     <p>Opening enrollment gives players placed on the roster access to the static’s own voice channel for this date, including players outside the static. Standby and Interested do not get this access. The static’s text channel stays private. Access ends when a player loses their place or the date ends. This is available on Free and follows Open enrollment.</p>
 
     <h2 id="statics">Statics</h2>
-    <p>A static is a fixed group, such as a raid static. EventMoogle stores its members in the database, so <code>Restricted: Raid Static</code> works even without a Discord role. Admins create statics in <code>/settings</code> → Statics. Members who want a static ask an admin. With Role management enabled, new statics also get a role with no permissions. Existing linked-role members are imported from a complete Discord member cache; later manual Discord role changes stay in sync. Incomplete imports remain pending.</p>
+    <p>A static is a fixed group, such as a raid static. RaidersNexus stores its members in the database, so <code>Restricted: Raid Static</code> works even without a Discord role. Admins create statics in <code>/settings</code> → Statics. Members who want a static ask an admin. With Role management enabled, new statics also get a role with no permissions. Existing linked-role members are imported from a complete Discord member cache; later manual Discord role changes stay in sync. Incomplete imports remain pending.</p>
     <p>Turning Role management off preserves the group and its Discord role; membership controls still edit the group but stop changing Discord roles. Deleting a linked role preserves the group and its restrictions. Group pings use the role when its complete member list exactly matches the group and that saves pings, otherwise they mention members individually.</p>
     <ul>
       <li><strong>Admins</strong> manage statics in <code>/settings</code> → Statics: <em>Create static…</em> names it; add and remove members; the <em>Static settings</em> menu offers <em>Members</em>, <em>Welcome message…</em>, <em>Name and purpose…</em>, <em>Leader and card</em> and <em>Dissolve…</em>; <em>Dissolve…</em> removes the group and, with Role management enabled, takes its linked role from members or deletes it.</li>
@@ -50,7 +50,7 @@
     <p>Leaders open <strong>Manage</strong> on the card or <code>/static</code>, then choose <strong>Welcome message…</strong>; admins use <strong>Static settings → Welcome message…</strong> in <code>/settings</code> → Statics. Write up to 1,000 characters, such as your schedule or group rules. Discord formatting, links and emoji work; mentions show without pinging anyone. The form shows your saved custom welcome, or is blank when the default is in use. Leave it blank to restore the current default. Welcomes are on every plan. They belong to the static and remain when their writer deletes their data.</p>
 
     <h3 id="pins">Pinned cards</h3>
-    <p>EventMoogle pins a card when it posts or moves it. Later edits do not pin cards again, so a manual unpin stays. There is no pinning switch. The bot needs <strong>Pin Messages</strong> in the card’s channel. If permission is missing, or Discord’s pin limit is reached, the card is posted unpinned and <strong>Status</strong> explains why. The bot never unpins someone else’s message to make room. Moving a card unpins and removes the old post; dissolving removes its card too.</p>
+    <p>RaidersNexus pins a card when it posts or moves it. Later edits do not pin cards again, so a manual unpin stays. There is no pinning switch. The bot needs <strong>Pin Messages</strong> in the card’s channel. If permission is missing, or Discord’s pin limit is reached, the card is posted unpinned and <strong>Status</strong> explains why. The bot never unpins someone else’s message to make room. Moving a card unpins and removes the old post; dissolving removes its card too.</p>
 
     <h3 id="event-channel">Where static events are posted</h3>
     <p>On a preset with a <strong>Static</strong>, leave <strong>Channel</strong> blank to use the static’s own text channel, otherwise the channel holding its card, otherwise the server’s announcement channel. The form’s hint shows the static’s channel when it has one. A typed Channel takes priority. Using a card’s channel works on every plan.</p>
@@ -61,7 +61,7 @@
     <p><strong>A static without channels:</strong> select it in Settings → Statics and choose <strong>Create private channels</strong> in <em>Static settings</em>. Only the missing ones are made, in the Statics category. A static created while Role management was off has no role, so its channels can’t be private to it: dissolve it and create it again.</p>
     <p>Admins choose <strong>Statics category</strong> in <code>/settings</code> → Statics; clear it to create channels at the top level. It applies to new channels. A static named Ironclad gets <code>#ironclad</code> and a voice channel named Ironclad. Only its role, the bot and people with Administrator can see them; its role can connect and speak in voice. Renaming the static renames both channels while channel automation is available. If someone deletes a channel, the bot forgets it and reports it in Status; <strong>Create private channels</strong> makes a new one.</p>
     <p><strong>Dissolve…</strong> asks whether to keep or delete a static’s channels in the same confirmation. <strong>Keep channels for an admin to remove</strong> is the default; <strong>Delete channels and their history</strong> loses their history. Kept channels are left for an admin to remove. If Paid ends, creation and automatic renaming pause, while existing channels and their saved IDs stay. Explicit deletion on dissolve is still allowed on Free. Turning Role management off also pauses channel automation.</p>
-    <p>Still stuck? Ask in the <a href="https://discord.gg/FmapP6S6xy">EventMoogle community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
+    <p>Still stuck? Ask in the <a href="https://discord.gg/FmapP6S6xy">RaidersNexus community server</a>. Anything else: contact <a href="https://discord.com/users/642106888493858847">the operator on Discord (user ID 642106888493858847)</a>.</p>
   </main>
   <footer><a href="guide.html">User Guide</a> · <a href="privacy.html">Privacy Policy</a> · <a href="terms.html">Terms of Service</a></footer>
 </body>
