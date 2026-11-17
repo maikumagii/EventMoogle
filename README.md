@@ -1,9 +1,5 @@
-# Event Moogle — public pages
+# RaidersNexus — public pages
 
-The user guide, Terms of Service and Privacy Policy for the Event Moogle Discord bot, served by GitHub Pages:
+The RaidersNexus user guide, Terms of Service and Privacy Policy are now hosted internally, and that copy is the current one.
 
-- User guide: https://maikumagii.github.io/EventMoogle/guide.html
-- Terms of Service: https://maikumagii.github.io/EventMoogle/terms.html
-- Privacy Policy: https://maikumagii.github.io/EventMoogle/privacy.html
-
-These files are generated; don't edit them here. They are rendered from the templates in the bot's (private) repository with `python scripts/render_policies.py --out ../EventMoogle`.
+The pages in this repository are an older copy, kept so that existing links keep working. Don't edit them here; make changes to the internally hosted guide instead.
